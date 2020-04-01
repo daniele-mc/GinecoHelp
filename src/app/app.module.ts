@@ -16,8 +16,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
+    BrowserModule,
+    IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
@@ -29,4 +29,4 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

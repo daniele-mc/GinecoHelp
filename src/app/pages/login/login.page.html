@@ -1,27 +1,34 @@
 <ion-content>
- <div class="backgroud">
-  <ion-button href="/objetivos" color="dark" class="button">
-    <img src="../../../assets/icon/voltar.png">
-  </ion-button>
+  <div class="backgroud">
+    <ion-button href="/objetivos" color="dark" class="button">
+      <img src="../../../assets/icon/voltar.png">
+    </ion-button>
     <ion-slides>
       <ion-slide>
         <div class="slide-inner ion-padding">
           <span>Login</span>
-  
+
           <ion-item class="ion-margin-top" lines="none">
             <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
           </ion-item>
-  
+
           <ion-item class="ion-margin-top" lines="none">
             <ion-input type="password" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
           </ion-item>
-          <a><p>Esqueceu a senha?</p></a>
-          <ion-button fill="outline" href="/opcoes" class="ion-margin-top" (click)="login()" color="primary" expand="block">
-            Entrar
+          <a>
+            <p>Esqueceu a senha?</p>
+          </a>
+          <ion-button fill="outline" href="/opcoes" class="ion-margin-top" (click)="login()" color="primary"
+            expand="block">
+            Continuar
+          </ion-button>
+          <ion-button fill="outline" href="/opcoes" class="ion-margin-top" (click)="login()" color="primary"
+            expand="block">
+            Login com Facebook
           </ion-button>
         </div>
       </ion-slide>
     </ion-slides>
-    
-    </div>
+
+  </div>
 </ion-content>

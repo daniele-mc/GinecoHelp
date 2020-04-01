@@ -30,18 +30,35 @@ ion-fab{
     bottom: 55px;
     margin-left: 80%;
 }
-
+//botão boneca
+.roupa{
+    position: absolute;
+    top: 40%;
+    margin-left: 75%;
+}
+.sabonete{
+    position: absolute;
+    top: 72%;
+    margin-left: 75%;
+}
+//tamanho do botão boneca
+ion-fab-button{
+    width: 85px;
+    height: 85px;
+}
+.text{
+    width: 270px;
+    margin-left: 2px;
+    margin-top: 4px;
+}
 ion-list-header{
     margin-left: 2%;
 }
-
 .rodape{
-    position: absolute;
-    bottom: 55px;
-    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 55px;
 }
-
-.link{
-   color: #4a1c75;
-   
+.boneca{
+    width: 100px;
+    height: 100px
 }

@@ -23,25 +23,44 @@ ion-item{
     --border-radius: 10px;
 }
 img{
-    height: 25px;
+    height: 33px;
+    display: inline-block;
+}
+//botão boneca
+.calcinha{
+    position: absolute;
+    top: 42%;
+    margin-left: 75%;
+}
+.absorvente{
+    position: absolute;
+    top: 72%;
+    margin-left: 75%;
+}
+//tamanho do botão boneca
+ion-fab-button{
+    width: 85px;
+    height: 85px;
 }
 ion-fab{
     position: absolute;
     bottom: 55px;
     margin-left: 80%;
 }
-
+.text{
+    width: 200px;
+    margin-left: 2px;
+    margin-top: 2px;
+}
 ion-list-header{
     margin-left: 2%;
 }
 
 .rodape{
-    position: absolute;
-    bottom: 55px;
-    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 55px;
 }
-
-.link{
-   color: #4a1c75;
-   
+.boneca{
+    width: 100px;
+    height: 100px
 }

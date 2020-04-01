@@ -23,25 +23,42 @@ ion-item{
     --border-radius: 10px;
 }
 img{
-    height: 25px;
+    height: 33px;
 }
-ion-fab{
+//botão boneca
+.ducha-higienica{
     position: absolute;
-    bottom: 55px;
-    margin-left: 80%;
+    //top: 44%;
+    //margin-left: 38%;
+    top: 42%;
+    margin-left: 75%;
 }
-
+.protetor-diario{
+    position: absolute;
+    //top: 73%;
+    //margin-left: 38%;
+    top: 72%;
+    margin-left: 75%;
+}
+//tamanho do botão boneca
+ion-fab-button{
+    //width: 60px;
+    //height: 60px;
+    width: 85px;
+    height: 85px;
+}
 ion-list-header{
     margin-left: 2%;
 }
 
 .rodape{
-    position: absolute;
-    bottom: 55px;
-    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 55px;
+}
+.boneca{
+    //width: 80px;
+    //height: 80px;
+    width: 100px;
+    height: 100px
 }
 
-.link{
-   color: #4a1c75;
-   
-}

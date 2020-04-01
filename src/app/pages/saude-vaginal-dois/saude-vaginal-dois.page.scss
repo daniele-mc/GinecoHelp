@@ -36,11 +36,18 @@ img{
 }
 
 ion-fab{
-    bottom: 55px;
-    margin-left: 80%;
+    top: 125px;
+    margin-left: 75%;    
+}
+ion-fab-button{
+    width: 85px;
+    height: 85px;
+}
+.boneca{
+    width: 100px;
+    height: 100px;
 }
 .rodape{
-    position: absolute;
-    bottom: 55px;
-    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 55px;
 }

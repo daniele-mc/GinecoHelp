@@ -9,36 +9,36 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  @ViewChild(IonSlides, {static: false}) slides: IonSlides;
+  @ViewChild(IonSlides, { static: false }) slides: IonSlides;
   public userLogin: User = {};
   public userRegister: User = {};
   private loading: any;
 
-  constructor( 
+  constructor(
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
-    private authService: AuthService
-    ) { }
+    private authService: AuthService,
+  ) { }
 
   ngOnInit() { }
-  segmentChanged(event: any){
-    if (event.detail.value === "login"){
+  segmentChanged(event: any) {
+    if (event.detail.value === "login") {
       this.slides.slidePrev();
-    } else{
+    } else {
       this.slides.slideNext();
     }
   }
 
-  async login(){
+  async login() {
     await this.presentLoading();
 
     try {
       await this.authService.register(this.userRegister);
-    } catch(error ){
+    } catch (error) {
       console.error(error);
       let message: string;
-      switch(error.code){
-        case 'auth/email-already-in-use': 
+      switch (error.code) {
+        case 'auth/email-already-in-use':
           message = 'E-mail já utilizado!';
           break;
         case 'auth/invalid-email':
@@ -51,23 +51,23 @@ export class LoginPage implements OnInit {
 
       this.presentToast(message);
 
-    } finally{
+    } finally {
       this.loading.dismiss();
     }
-    
+
 
   }
 
-  async register(){
+  async register() {
     await this.presentLoading();
-
+    console.log(this.userRegister);
     try {
       await this.authService.register(this.userRegister);
-    } catch(error ){
+    } catch (error) {
       console.error(error);
       let message: string;
-      switch(error.code){
-        case 'auth/email-already-in-use': 
+      switch (error.code) {
+        case 'auth/email-already-in-use':
           message = 'E-mail já utilizado!';
           break;
         case 'auth/invalid-email':
@@ -80,14 +80,14 @@ export class LoginPage implements OnInit {
 
       this.presentToast(message);
 
-    } finally{
+    } finally {
       this.loading.dismiss();
     }
-    
+
   }
 
   async presentLoading() {
-    this.loading = await this.loadingCtrl.create({message: 'Por favor, aguarde...'});
+    this.loading = await this.loadingCtrl.create({ message: 'Por favor, aguarde...' });
     return this.loading.present();
   }
 

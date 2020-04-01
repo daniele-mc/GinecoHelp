@@ -5,28 +5,18 @@
       <ion-label class="titu ion-text-center"><b>Higiene Íntima</b></ion-label>
       <ion-radio-group>
         <ion-list-header>
-          <ion-label><b>Dorme com calcinha?</b></ion-label>
+          <ion-label>
+            <div>
+              <div>
+                <img src="../../../assets/icon/calcinha.png" style="float: left">
+              </div>
+              <div class="text">
+                <b>Dorme com calcinha?</b>
+              </div>
+            </div>
+          </ion-label>
         </ion-list-header>
-    
-        <ion-item>
-          <ion-label>Sim</ion-label>
-          <ion-radio slot="start" value="sim" checked></ion-radio>
-        </ion-item>
-    
-        <ion-item>
-          <ion-label>Não</ion-label>
-          <ion-radio slot="start" value="nao"></ion-radio>
-        </ion-item>
-      </ion-radio-group>
-      <ion-item>
-        <ion-label>Devo usar? <a class="link">Clique aqui</a></ion-label>
-      </ion-item>
-        
-      <ion-radio-group>
-        <ion-list-header>
-          <ion-label><b>Usa absorvente interno?</b></ion-label>
-        </ion-list-header>
-    
+
         <ion-item>
           <ion-label>Sim</ion-label>
           <ion-radio slot="start" value="sim" checked></ion-radio>
@@ -38,17 +28,57 @@
         </ion-item>
       </ion-radio-group>
       <ion-item>
-        <ion-label>Devo usar? <a class="link">Clique aqui</a></ion-label>
+        <ion-label>Devo usar?</ion-label>
+      </ion-item>
+
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label>
+            <div>
+              <div>
+                <img src="../../../assets/icon/absorvente.png" style="float: left">
+              </div>
+              <div class="text">
+                <b>Usa absorvente interno?</b>
+              </div>
+            </div>
+          </ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Sim</ion-label>
+          <ion-radio slot="start" value="sim" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Não</ion-label>
+          <ion-radio slot="start" value="nao"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+      <ion-item>
+        <ion-label>Devo usar?</ion-label>
       </ion-item>
       <br>
     </ion-list>
     <div class="rodape ion-text-center">
-      <ion-button color="primary" href="/higiene-tres" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>próximo</b></ion-button>
+      <ion-button color="primary" href="/higiene" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>voltar</b></ion-button>
+      <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>menu</b></ion-button>
+      <ion-button color="primary" href="/higiene-tres" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>próximo</b></ion-button>
     </div>
   </div>
-  <ion-fab>
-    <ion-fab-button>
-      <img src="../../../assets/icon/dica.png"> 
+  <ion-fab class="calcinha">
+    <ion-fab-button (click)="presentAlert1()">
+      <img src="../../../assets/icon/gyneco.png" class="boneca">
     </ion-fab-button>
   </ion-fab>
+
+  <ion-fab class="absorvente">
+    <ion-fab-button (click)="presentAlert2()">
+      <img src="../../../assets/icon/gyneco.png" class="boneca">
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>
