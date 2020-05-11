@@ -1,11 +1,10 @@
 .backgroud {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    --backgroud: #c8ffff; 
+    padding: 0px;
     background: url(../../../assets/img/saude.jpeg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-color: #ff6c92;
+    background-size: 100% 100%;
+    width: 100%;
 }
 
 ion-list{

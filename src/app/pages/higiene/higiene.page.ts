@@ -8,8 +8,6 @@ import { AlertController } from '@ionic/angular';
 })
 export class HigienePage implements OnInit {
 
-  //constructor() { }
-
   constructor(public AlertController: AlertController) { }
   async presentAlert1() {
     const alert = await this.AlertController.create({

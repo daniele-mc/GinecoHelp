@@ -1,0 +1,76 @@
+<ion-content>
+  <div class="backgroud ion-text-center">
+    <ion-list>
+      <br>
+      <div class="cabecalho">
+        <img src="../../../assets/icon/gravidez.png">
+        <ion-label class="titu ion-text-center"><b> Práticas sexuais e gravidez</b>
+        </ion-label>
+      </div>
+      <br>
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label><b>Pode fazer sexo na gravidez?</b>
+          </ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Sim</ion-label>
+          <ion-radio slot="start" value="sim" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Não</ion-label>
+          <ion-radio slot="start" value="nao"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+      <br>
+
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label><b>Quanto tempo após o parto pode fazer sexo ?</b>
+          </ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Logo após o parto</ion-label>
+          <ion-radio slot="start" value="pos-parto" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>15 dias após o parto</ion-label>
+          <ion-radio slot="start" value="15dias"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>40 dias após o parto</ion-label>
+          <ion-radio slot="start" value="40dias"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Não sei</ion-label>
+          <ion-radio slot="start" value="naosei"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <div class="rodape ion-text-center">
+      <ion-button color="primary" href="/saude-relacoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>voltar</b></ion-button>
+      <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>menu</b></ion-button>
+      <ion-button color="primary" href="/desejo-sexual" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>próximo</b></ion-button>
+
+    </div>
+  </div>
+  <ion-fab class="gravidez">
+    <ion-fab-button (click)="presentAlert1()">
+      <img src="../../../assets/icon/gyneco.png" class="boneca">
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab class="parto">
+    <ion-fab-button (click)="presentAlert2()">
+      <img src="../../../assets/icon/gyneco.png" class="boneca">
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

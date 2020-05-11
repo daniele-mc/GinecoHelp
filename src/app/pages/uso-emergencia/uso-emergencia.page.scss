@@ -2,7 +2,7 @@
     position: absolute;
     --backgroud: #c8ffff; 
     padding: 0px;
-    background-image: url(../../../assets/img/metodo.png);
+    background-image: url(../../../assets/img/metodo.jpg);
     background-size: 100% 100%;
     width: 100%;
 }
@@ -13,6 +13,9 @@ ion-list{
     margin-right: 20px;
     margin-top: 120px;
     border-radius: 25px;
+}
+.cabecalho{
+    text-align: center;
 }
 ion-radio{
     --color-checked: #ff6c92;
@@ -31,16 +34,28 @@ ion-list-header{
 }
 
 ion-fab{
-    margin-left: 14%;
+    position: absolute;
+    bottom: 55px;
+    margin-left: 80%;
+}
+//botão boneca
+
+.pilula-dia-seguinte{
+    position: absolute;
+    top: 60%;
+    margin-left: 75%;
 }
 
+//tamanho do botão boneca
+ion-fab-button{
+    width: 85px;
+    height: 85px;
+}
 .rodape{
-    position: static;
-    height: 110px;
-    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 55px;
 }
-
-.link{
-   color: #4a1c75;
-   
+.boneca{
+    width: 100px;
+    height: 100px
 }

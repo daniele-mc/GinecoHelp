@@ -1,11 +1,10 @@
 .backgroud {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    --backgroud: #c8ffff; 
+    padding: 0px;
     background: url(../../../assets/img/saude.jpeg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-color: #ff6c92;
+    background-size: 100% 100%;
+    width: 100%;
 }
 
 ion-list{
@@ -28,22 +27,16 @@ img{
 //botão boneca
 .ducha-higienica{
     position: absolute;
-    //top: 44%;
-    //margin-left: 38%;
     top: 42%;
     margin-left: 75%;
 }
 .protetor-diario{
     position: absolute;
-    //top: 73%;
-    //margin-left: 38%;
     top: 72%;
     margin-left: 75%;
 }
 //tamanho do botão boneca
 ion-fab-button{
-    //width: 60px;
-    //height: 60px;
     width: 85px;
     height: 85px;
 }
@@ -56,8 +49,6 @@ ion-list-header{
     margin-bottom: 55px;
 }
 .boneca{
-    //width: 80px;
-    //height: 80px;
     width: 100px;
     height: 100px
 }

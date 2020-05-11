@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides, LoadingController, ToastController } from '@ionic/angular';
 import { User } from 'src/app/interface/user';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,34 +19,29 @@ export class LoginPage implements OnInit {
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() { }
-  segmentChanged(event: any) {
-    if (event.detail.value === "login") {
-      this.slides.slidePrev();
-    } else {
-      this.slides.slideNext();
-    }
-  }
 
   async login() {
     await this.presentLoading();
 
     try {
-      await this.authService.register(this.userRegister);
+      await this.authService.login(this.userLogin);
+      this.router.navigate(['opcoes']);
     } catch (error) {
       console.error(error);
       let message: string;
       switch (error.code) {
-        case 'auth/email-already-in-use':
-          message = 'E-mail já utilizado!';
+        case 'auth/user-not-found':
+          message = 'Não foi encontrado e-mail correspondente!';
           break;
         case 'auth/invalid-email':
           message = 'E-mail inválido!';
           break;
-        case 'auth/weak-password':
-          message = 'Senha inválida! Por favor, digite uma com mais de 6 caracteres!'
+        case 'auth/wrong-password':
+          message = 'Senha inválida!'
           break;
       }
 
@@ -53,35 +49,7 @@ export class LoginPage implements OnInit {
 
     } finally {
       this.loading.dismiss();
-    }
 
-
-  }
-
-  async register() {
-    await this.presentLoading();
-    console.log(this.userRegister);
-    try {
-      await this.authService.register(this.userRegister);
-    } catch (error) {
-      console.error(error);
-      let message: string;
-      switch (error.code) {
-        case 'auth/email-already-in-use':
-          message = 'E-mail já utilizado!';
-          break;
-        case 'auth/invalid-email':
-          message = 'E-mail inválido!';
-          break;
-        case 'auth/weak-password':
-          message = 'Senha inválida! Por favor, digite uma com mais de 6 caracteres!'
-          break;
-      }
-
-      this.presentToast(message);
-
-    } finally {
-      this.loading.dismiss();
     }
 
   }
@@ -97,5 +65,3 @@ export class LoginPage implements OnInit {
   }
 
 }
-
-

@@ -1,11 +1,10 @@
 .backgroud {
     position: absolute;
+    --backgroud: #c8ffff; 
+    padding: 0px;
+    background: url(../../../assets/img/sexo.jpg);
+    background-size: 100% 100%;
     width: 100%;
-    height: 100%;
-    background: url(../../../assets/img/saude.jpeg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-color: #ff6c92;
 }
 ion-list{
     background-color:#b5f0f0;
@@ -13,6 +12,10 @@ ion-list{
     margin-right: 20px;
     margin-top: 100px;
     border-radius: 25px;
+}
+.cabecalho{
+    text-align: center;
+   
 }
 ion-radio{
     --color-checked: #ff6c92;
@@ -24,18 +27,40 @@ ion-item{
 img{
     height: 25px;
 }
+
+ion-list-header{
+    padding: 0px;
+    text-align: center;
+}
+
 ion-fab{
     position: absolute;
     bottom: 55px;
     margin-left: 80%;
 }
+//botão boneca
 
-ion-list-header{
-    margin-left: 2%;
+.protecao{
+    position: absolute;
+    top: 48%;
+    margin-left: 75%;
+}
+.camisinha{
+    position: absolute;
+    top: 75%;
+    margin-left: 75%;
 }
 
+//tamanho do botão boneca
+ion-fab-button{
+    width: 85px;
+    height: 85px;
+}
 .rodape{
-    position: absolute;
-    bottom: 55px;
-    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 55px;
+}
+.boneca{
+    width: 100px;
+    height: 100px
 }

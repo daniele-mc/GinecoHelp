@@ -1,0 +1,97 @@
+<ion-content>
+  <div class="background ion-text-left">
+    <ion-list>
+      <br>
+      <div class="cabecalho">
+        <img src="../../../assets/icon/sexo.png">
+        <ion-label class="titu ion-text-center"><b> Sexo</b></ion-label>
+      </div>
+
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label><b>Existe idade ideal para a menina começar a fazer sexo?</b></ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Sim</ion-label>
+          <ion-radio slot="start" value="sim" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Não</ion-label>
+          <ion-radio slot="start" value="nao"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label><b>Se sim, qual:</b></ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Antes dos 12 anos</ion-label>
+          <ion-radio slot="start" value="12anos" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Entre 12 e 17 anos</ion-label>
+          <ion-radio slot="start" value="12-17anos"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Após aos 18 anos</ion-label>
+          <ion-radio slot="start" value="18anos" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Qualquer idade</ion-label>
+          <ion-radio slot="start" value="qualquer"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label><b>Pode usar o mesmo preservativo no sexo vaginal e anal?</b></ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Sim</ion-label>
+          <ion-radio slot="start" value="sim" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Às vezes</ion-label>
+          <ion-radio slot="start" value="as-vezes" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Não</ion-label>
+          <ion-radio slot="start" value="nao"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+
+    </ion-list>
+    <div class="rodape ion-text-center">
+      <ion-button color="primary" href="/uso-emergencia" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>voltar</b>
+      </ion-button>
+      <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
+      </ion-button>
+      <ion-button color="primary" href="/saude-relacoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>próximo</b>
+      </ion-button>
+    </div>
+  </div>
+
+  <ion-fab class="idade">
+    <ion-fab-button (click)="presentAlert1()">
+      <img src="../../../assets/icon/gyneco.png" class="boneca">
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab class="preservativo">
+    <ion-fab-button (click)="presentAlert2()">
+      <img src="../../../assets/icon/gyneco.png" class="boneca">
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

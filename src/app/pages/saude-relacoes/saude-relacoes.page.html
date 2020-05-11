@@ -1,21 +1,51 @@
 <ion-content>
   <div class="backgroud ion-text-center">
     <ion-list>
+      <br>
+      <div class="cabecalho">
+        <img src="../../../assets/icon/infeccao.png">
+        <ion-label class="titu ion-text-center"><b> Prática sexual e Infecções sexualmente transmissíveis</b>
+        </ion-label>
+      </div>
+      <br>
       <ion-radio-group>
         <ion-list-header>
-          <ion-label><b>Dor na relação</b></ion-label>
+          <ion-label><b>Fazer sexo oral e/ou anal sem proteção pode pegar uma infecção sexualmente transmissível?</b>
+          </ion-label>
         </ion-list-header>
-    
+
         <ion-item>
           <ion-label>Sim</ion-label>
           <ion-radio slot="start" value="sim" checked></ion-radio>
         </ion-item>
-    
+
+        <ion-item>
+          <ion-label>Não</ion-label>
+          <ion-radio slot="start" value="nao"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label><b>Se sim, qual(is):</b></ion-label>
+        </ion-item>
+      </ion-radio-group>
+      <br>
+
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label><b>Fazer sexo sem camisinha pode levar a ter infecções sexualmente transmissíveis?</b>
+          </ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Sim</ion-label>
+          <ion-radio slot="start" value="sim" checked></ion-radio>
+        </ion-item>
+
         <ion-item>
           <ion-label>As vezes</ion-label>
           <ion-radio slot="start" value="asvezes"></ion-radio>
         </ion-item>
-    
+
         <ion-item>
           <ion-label>Não</ion-label>
           <ion-radio slot="start" value="nao"></ion-radio>
@@ -23,12 +53,23 @@
       </ion-radio-group>
     </ion-list>
     <div class="rodape ion-text-center">
-      <ion-button color="primary" href="/higiene" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>próximo</b></ion-button>
+      <ion-button color="primary" href="/sexo" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>voltar</b></ion-button>
+      <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>menu</b></ion-button>
+      <ion-button color="primary" href="/gravidez" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>próximo</b></ion-button>
+
     </div>
   </div>
-  <ion-fab>
-    <ion-fab-button>
-      <img src="../../../assets/icon/dica.png"> 
+  <ion-fab class="protecao">
+    <ion-fab-button (click)="presentAlert1()">
+      <img src="../../../assets/icon/gyneco.png" class="boneca">
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab class="camisinha">
+    <ion-fab-button (click)="presentAlert2()">
+      <img src="../../../assets/icon/gyneco.png" class="boneca">
     </ion-fab-button>
   </ion-fab>
 </ion-content>

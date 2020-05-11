@@ -2,7 +2,7 @@
     position: absolute;
     --backgroud: #c8ffff; 
     padding: 0px;
-    background-image: url(../../../assets/img/metodo.png);
+    background-image: url(../../../assets/img/metodo.jpg);
     background-size: 100% 100%;
     width: 100%;
 }
@@ -22,7 +22,7 @@ ion-item{
     --border-radius: 10px;
 }
 img{
-    height: 25px;
+    height: 33px;
 }
 
 
@@ -35,12 +35,6 @@ ion-fab{
 }
 
 .rodape{
-    position: static;
-    height: 110px;
-    width: 100%;
-}
-
-.link{
-   color: #4a1c75;
-   
+    margin-top: 5px;
+    margin-bottom: 20px;
 }

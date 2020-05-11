@@ -1,0 +1,59 @@
+.backgroud {
+    position: absolute;
+    --backgroud: #c8ffff; 
+    padding: 0px;
+    background: url(../../../assets/img/clico.png);
+    background-size: 100% 100%;
+    width: 100%;
+}
+ion-list{
+    background-color:#b5f0f0;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 95px;
+    border-radius: 25px;
+}
+ion-radio{
+    --color-checked: #ff6c92;
+}
+ion-item{
+    --background:#b5f0f0;
+    --border-radius: 10px;
+}
+img{
+    height: 33px;
+}
+ion-list-header{
+    margin-left: 2%;
+    padding: 0px;
+}
+ion-fab{
+    margin-left: 14%;
+}
+.text1{
+    width: 100px;
+    margin-left: 10%;
+    margin-top: 4px;
+}
+.text2{
+    width: 200px;
+    margin-left: 10%;
+    margin-top: 4px;
+}
+.coluna1{
+    width: 50%;
+    margin-left: 1px;
+    float: left;
+}
+.coluna2{
+    width: 50%;
+    margin-left: 50%;    
+}
+.ultimo-text{
+    position: relative;
+    margin-top: 4px;
+}
+.rodape{
+    margin-top: 5px;
+    margin-bottom: 20px;
+}

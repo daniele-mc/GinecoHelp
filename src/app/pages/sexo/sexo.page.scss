@@ -1,0 +1,65 @@
+.background {
+    position: absolute;
+    --backgroud: #c8ffff; 
+    padding: 0px;
+    background-image: url(../../../assets/img/sexo.jpg);
+    background-size: 100% 100%;
+    width: 100%;
+}
+
+ion-list{
+    background-color:#b5f0f0;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 120px;
+    border-radius: 25px;
+}
+.cabecalho{
+    text-align: center;
+}
+ion-radio{
+    --color-checked: #ff6c92;
+}
+ion-item{
+    --background:#b5f0f0;
+    --border-radius: 10px;
+}
+img{
+    height: 25px;
+}
+
+ion-list-header{
+    margin-left: 2%;
+}
+
+ion-fab{
+    position: absolute;
+    bottom: 55px;
+    margin-left: 80%;
+}
+//botão boneca
+
+.idade{
+    position: absolute;
+    top: 37%;
+    margin-left: 75%;
+}
+.preservativo{
+    position: absolute;
+    top: 97%;
+    margin-left: 75%;
+}
+
+//tamanho do botão boneca
+ion-fab-button{
+    width: 85px;
+    height: 85px;
+}
+.rodape{
+    margin-top: 5px;
+    margin-bottom: 55px;
+}
+.boneca{
+    width: 100px;
+    height: 100px
+}

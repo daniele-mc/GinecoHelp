@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-saude-relacoes',
@@ -7,7 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaudeRelacoesPage implements OnInit {
 
-  constructor() { }
+  constructor(public AlertController: AlertController) { }
+  async presentAlert1() {
+    const alert = await this.AlertController.create({
+      header: 'Fazer sexo oral e/ou anal posso pegar uma  infecção sexualmente transmissível?',
+      message: 'HPV, gonorreia, clamídia e outras.',
+      buttons: ['Ok']
+    });
+
+    await alert.present();
+    let result = await alert.onDidDismiss();
+    console.log(result);
+  }
+
+  async presentAlert2() {
+    const alert = await this.AlertController.create({
+      header: 'Fazer sexo sem camisinha pode levar a ter infecções sexualmente transmissíveis?',
+      message: 'Fazer sexo sem camisinha pode levar a infecções sexualmente transmissíveis e entupir as trompas impedindo a mulher de engravidar',
+      buttons: ['Ok']
+    });
+
+    await alert.present();
+    let result = await alert.onDidDismiss();
+    console.log(result);
+  }
 
   ngOnInit() {
   }

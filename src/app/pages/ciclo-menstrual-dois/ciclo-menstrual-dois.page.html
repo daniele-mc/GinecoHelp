@@ -1,16 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>ciclo-menstrual-dois</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-item>
-    <ion-label>Relação sexual hoje</ion-label>
-    <ion-select>
-      <ion-select-option value="cat">Protegido</ion-select-option>
-      <ion-select-option value="dog">Desprotegido</ion-select-option>
-    </ion-select>
-  </ion-item>
+  <div class="backgroud ion-text-center">
 
+    <ion-calendar [(ngModel)]="dateRange" [options]="optionsRange" [type]="type" [format]="'YYYY-MM-DD'">
+    </ion-calendar>
+
+    <ion-button color="primary" href="/ciclo-menstrual" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <b>voltar</b>
+    </ion-button>
+    <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <b>menu</b>
+    </ion-button>
+    <ion-button color="primary" href="/sintomas" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <b>próximo</b>
+    </ion-button>
+
+  </div>
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalendarComponentOptions } from 'ion2-calendar'
 
 @Component({
   selector: 'app-ciclo-menstrual-dois',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CicloMenstrualDoisPage implements OnInit {
 
+  dateRange: { from: string; to: string; };
+  type: 'string';
+
+  optionsRange: CalendarComponentOptions = {
+    pickMode: 'range'
+  };
+
   constructor() { }
 
+
   ngOnInit() {
+
   }
+
 
 }

@@ -1,0 +1,70 @@
+.backgroud {
+    position: absolute;
+    --backgroud: #c8ffff; 
+    padding: 0px;
+    background: url(../../../assets/img/sexo.jpg);
+    background-size: 100% 100%;
+    width: 100%;
+}
+ion-list{
+    background-color:#b5f0f0;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 100px;
+    border-radius: 25px;
+}
+.cabecalho{
+    margin-right: 20px;
+
+}
+ion-radio{
+    --color-checked: #ff6c92;
+}
+ion-item{
+    --background:#b5f0f0;
+    --border-radius: 10px;
+}
+img{
+    height: 33px;
+}
+
+ion-list-header{
+    margin-left: 2%;
+}
+ion-input{
+    --background: #c8ffff;
+    --color: #4a1c75;
+    text-align: left;
+    border-radius: 25px;
+}
+ion-fab{
+    position: absolute;
+    bottom: 55px;
+    margin-left: 80%;
+}
+//botão boneca
+
+.orgasmo{
+    position: absolute;
+    top: 50%;
+    margin-left: 75%;
+}
+.abuso{
+    position: absolute;
+    top: 80%;
+    margin-left: 75%;
+}
+
+//tamanho do botão boneca
+ion-fab-button{
+    width: 85px;
+    height: 85px;
+}
+.rodape{
+    margin-top: 5px;
+    margin-bottom: 55px;
+}
+.boneca{
+    width: 100px;
+    height: 100px
+}
