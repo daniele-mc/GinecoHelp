@@ -28,8 +28,6 @@ export class CadastroPage implements OnInit {
 
     try {
       await this.authService.register(this.userRegister);
-      this.router.navigate(['opcoes']);
-
     } catch (error) {
       console.error(error);
       let message: string;
@@ -44,14 +42,10 @@ export class CadastroPage implements OnInit {
           message = 'Senha inválida! Por favor, digite uma com mais de 6 caracteres!'
           break;
       }
-
       this.presentToast(message);
-
     } finally {
       this.loading.dismiss();
-
     }
-
   }
 
   async presentLoading() {

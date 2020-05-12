@@ -29,7 +29,6 @@ export class LoginPage implements OnInit {
 
     try {
       await this.authService.login(this.userLogin);
-      this.router.navigate(['opcoes']);
     } catch (error) {
       console.error(error);
       let message: string;
@@ -44,14 +43,10 @@ export class LoginPage implements OnInit {
           message = 'Senha inválida!'
           break;
       }
-
       this.presentToast(message);
-
     } finally {
       this.loading.dismiss();
-
     }
-
   }
 
   async presentLoading() {
