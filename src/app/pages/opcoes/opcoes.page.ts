@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-opcoes',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpcoesPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
+  }
+
+  async logout() {
+    try {
+      await this.authService.logout();
+    } catch (error) {
+      console.error(error);
+    }
+
   }
 
 }

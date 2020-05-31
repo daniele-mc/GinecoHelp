@@ -19,7 +19,6 @@ export class LoginPage implements OnInit {
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private authService: AuthService,
-    private router: Router
   ) { }
 
   ngOnInit() { }

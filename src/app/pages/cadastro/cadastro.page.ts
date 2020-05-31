@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides, LoadingController, ToastController } from '@ionic/angular';
-import { User } from 'src/app/interface/user';
 import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
 @Component({
@@ -11,23 +10,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./cadastro.page.scss'],
 })
 export class CadastroPage implements OnInit {
-  public userRegister: User = {};
+  public user: any = {};
   private loading: any;
 
   constructor(
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private authService: AuthService,
-    private router: Router
+    private afs: AngularFirestore,
   ) {
   }
   ngOnInit() { }
 
+
   async register() {
     await this.presentLoading();
-
     try {
-      await this.authService.register(this.userRegister);
+      // faz um registro com email e senha do obj usuario
+      const newUser = await this.authService.register(this.user);
+      // copia do newuser para tirar senha para nao aparecer no banco de dados
+      const newUserObject = Object.assign({}, this.user);
+      delete newUserObject.password;
+      // faz um colecao no firebase chamado users, pega o uid do newuseer e coloca o que tem em new object users
+      await this.afs.collection('Users').doc(newUser.user.uid).set(newUserObject);
+
     } catch (error) {
       console.error(error);
       let message: string;

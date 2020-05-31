@@ -3,9 +3,10 @@
 
     <ion-list class="lista">
 
+
       <ion-list-header><b>Sente ou possui os sintomas:</b></ion-list-header>
 
-      <ion-radio-group>
+      <ion-radio-group (click)="saveHealth()" [(ngModel)]="health.ardor">
         <ion-list-header>
           <ion-label><img src="../../../assets/icon/heart.png"><b>Ardor</b></ion-label>
         </ion-list-header>
@@ -13,13 +14,13 @@
         <ion-item>
           <img src="../../../assets/icon/nenhum.png">
           <ion-label>Nenhum</ion-label>
-          <ion-radio slot="start" value="nenhum" checked></ion-radio>
+          <ion-radio slot="start" value="nenhum"></ion-radio>
         </ion-item>
 
         <ion-item>
           <img src="../../../assets/icon/baixo.png">
           <ion-label>Baixo</ion-label>
-          <ion-radio slot="start" value="baixo" checked></ion-radio>
+          <ion-radio slot="start" value="baixo"></ion-radio>
         </ion-item>
 
         <ion-item>
@@ -37,14 +38,15 @@
       </ion-radio-group>
 
 
-      <ion-item>
+      <ion-item (ionChange)="corrimentoHandler($event)">
         <img src="../../../assets/icon/corrimento.png">
         <ion-label>Corrimento</ion-label>
-        <ion-select placeholder="Selecione" [(ngModel)]="corrimento" multiple="true">
+        <ion-select (click)="saveHealth()" id="corrimento" placeholder="Selecione" [(ngModel)]="health.corrimento"
+          multiple="true">
           <ion-select-option value="transparente">Transparente</ion-select-option>
           <ion-select-option value="branco">Branco</ion-select-option>
           <ion-select-option value="amarelo">Amarelo</ion-select-option>
-          <ion-select-option value="a-esverdeado">Amarelo-esverdeado</ion-select-option>
+          <ion-select-option value="amarelo esverdeado">Amarelo-esverdeado</ion-select-option>
           <ion-select-option value="marrom">Marrom</ion-select-option>
           <ion-select-option value="sangue">Com sangue</ion-select-option>
           <ion-select-option value="rosado">Rosado</ion-select-option>
@@ -54,39 +56,39 @@
       <ion-item>
         <img src="../../../assets/icon/coceira.png">
         <ion-label> Coceira</ion-label>
-        <ion-toggle></ion-toggle>
+        <ion-toggle (click)="saveHealth()" [(ngModel)]="health.coceira">
+        </ion-toggle>
       </ion-item>
 
-
-      <ion-list-header>
-        <ion-label>
-          <div>
-            <div style="float: left">
-              <img src="../../../assets/icon/dor-relacao.png">
+      <ion-radio-group (click)="saveHealth()" [(ngModel)]="health.dorNaRelacao">
+        <ion-list-header>
+          <ion-label>
+            <div>
+              <div style="float: left">
+                <img src="../../../assets/icon/dor-relacao.png">
+              </div>
+              <div class="text">
+                <b>Dor na relação:</b>
+              </div>
             </div>
-            <div class="text">
-              <b>Dor na relação:</b>
-            </div>
-          </div>
-        </ion-label>
-      </ion-list-header>
+          </ion-label>
+        </ion-list-header>
 
+        <ion-item>
+          <ion-label>Sim</ion-label>
+          <ion-radio slot="start" value="sim"></ion-radio>
+        </ion-item>
 
-      <ion-item>
-        <ion-label>Sim</ion-label>
-        <ion-radio slot="start" value="sim" checked></ion-radio>
-      </ion-item>
+        <ion-item>
+          <ion-label>As vezes</ion-label>
+          <ion-radio slot="start" value="as vezes"></ion-radio>
+        </ion-item>
 
-      <ion-item>
-        <ion-label>As vezes</ion-label>
-        <ion-radio slot="start" value="asvezes"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Não</ion-label>
-        <ion-radio slot="start" value="nao"></ion-radio>
-      </ion-item>
-
+        <ion-item>
+          <ion-label>Não</ion-label>
+          <ion-radio slot="start" value="nao"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
 
     </ion-list>
 
