@@ -8,6 +8,8 @@ import { SaudeVaginalPageRoutingModule } from './saude-vaginal-routing.module';
 
 import { SaudeVaginalPage } from './saude-vaginal.page';
 
+
+
 @NgModule({
   imports: [
     CommonModule,

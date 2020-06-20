@@ -6,7 +6,7 @@
 
       <ion-list-header><b>Sente ou possui os sintomas:</b></ion-list-header>
 
-      <ion-radio-group (click)="saveHealth()" [(ngModel)]="health.ardor">
+      <ion-radio-group allow-empty-selection="true" (click)="saveHealth()" [(ngModel)]="health.ardor">
         <ion-list-header>
           <ion-label><img src="../../../assets/icon/heart.png"><b>Ardor</b></ion-label>
         </ion-list-header>
@@ -41,8 +41,7 @@
       <ion-item (ionChange)="corrimentoHandler($event)">
         <img src="../../../assets/icon/corrimento.png">
         <ion-label>Corrimento</ion-label>
-        <ion-select (click)="saveHealth()" id="corrimento" placeholder="Selecione" [(ngModel)]="health.corrimento"
-          multiple="true">
+        <ion-select id="corrimento" placeholder="Selecione" [(ngModel)]="health.corrimento" multiple="true">
           <ion-select-option value="transparente">Transparente</ion-select-option>
           <ion-select-option value="branco">Branco</ion-select-option>
           <ion-select-option value="amarelo">Amarelo</ion-select-option>
@@ -56,11 +55,11 @@
       <ion-item>
         <img src="../../../assets/icon/coceira.png">
         <ion-label> Coceira</ion-label>
-        <ion-toggle (click)="saveHealth()" [(ngModel)]="health.coceira">
+        <ion-toggle (click)="saveHealth()" [(ngModel)]="coceira">
         </ion-toggle>
       </ion-item>
 
-      <ion-radio-group (click)="saveHealth()" [(ngModel)]="health.dorNaRelacao">
+      <ion-radio-group allow-empty-selection="true" (click)="saveHealth()" [(ngModel)]="health.dorNaRelacao">
         <ion-list-header>
           <ion-label>
             <div>
@@ -93,17 +92,18 @@
     </ion-list>
 
     <div class="rodape ion-text-center">
-      <ion-button class="voltar" href="opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>voltar</b>
+      <ion-button class="voltar" (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>voltar</b>
       </ion-button>
-      <ion-button class="menu" href="opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
+      <ion-button class="menu" (click)="menu()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
       </ion-button>
-      <ion-button class="proximo" href="/saude-vaginal-dois" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button class="proximo" (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>próximo</b>
       </ion-button>
     </div>
 
     <ion-fab>
-      <ion-fab-button href="/saude-vaginal-dicas">
+      <ion-fab-button (click)="tip()">
         <img src="../../../assets/icon/gyneco.png" class="boneca">
       </ion-fab-button>
     </ion-fab>

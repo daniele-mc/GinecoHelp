@@ -32,7 +32,9 @@ export class CadastroPage implements OnInit {
       const newUserObject = Object.assign({}, this.user);
       delete newUserObject.password;
       // faz um colecao no firebase chamado users, pega o uid do newuseer e coloca o que tem em new object users
+      //await this.afs.collection(newUser.user.uid).doc('dados pessoais').set(newUserObject);
       await this.afs.collection('Users').doc(newUser.user.uid).set(newUserObject);
+
 
     } catch (error) {
       console.error(error);

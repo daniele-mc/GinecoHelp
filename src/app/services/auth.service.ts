@@ -17,8 +17,6 @@ export class AuthService {
     return this.afa.auth.createUserWithEmailAndPassword(user.email, user.password);
   }
 
-  //fazer uma funcao para mostrar dados do usuario para poder editar ou deletar (por isso o template)
-
   logout() {
     return this.afa.auth.signOut();
   }
