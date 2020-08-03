@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 .backgroud {
     position: absolute;
     width: 100%;
@@ -7,7 +8,20 @@
     background-size: 100%;
     background-color: #ff6c92;
 }
-
+.title {
+    position: relative;
+    top: 2%;
+    font-size: 55px;
+    font-family: 'Amatic SC', cursive;
+    color: #6d4c80; 
+}
+.subtitle {
+    position: relative;
+    top: 2%;
+    font-size: 40px;
+    font-family: 'Amatic SC', cursive;
+    color: #6d4c80; 
+}
 .rodape{
 
     position: absolute;

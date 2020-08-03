@@ -1,18 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 .background {
     position: absolute;
     --backgroud: #c8ffff; 
     padding: 0px;
-    background-image: url(../../../assets/img/metodo.jpg);
+    background-image: url(../../../assets/img/back.png);
     background-size: 100% 100%;
     width: 100%;
+    height: 100%;
 }
-
+.title {
+    position: relative;
+    top: 1%;
+    font-size: 38px;
+    font-family: 'Amatic SC', cursive;
+    color: #6d4c80; 
+}
 ion-list{
     background-color:#b5f0f0;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 120px;
+    margin-top: 2%;
     border-radius: 25px;
+
 }
 ion-radio{
     --color-checked: #ff6c92;
@@ -20,21 +29,26 @@ ion-radio{
 ion-item{
     --background:#b5f0f0;
     --border-radius: 10px;
+    height: 42px;
 }
 img{
     height: 33px;
 }
-
-
 ion-list-header{
     margin-left: 2%;
+    min-height: 29px;
 }
 
 ion-fab{
     margin-left: 14%;
 }
-
-.rodape{
-    margin-top: 5px;
-    margin-bottom: 20px;
+.coluna1{
+    width: 50%;
+    margin-left: 1px;
+    float: left;
 }
+.coluna2{
+    width: 50%;
+    margin-left: 50%;    
+}
+

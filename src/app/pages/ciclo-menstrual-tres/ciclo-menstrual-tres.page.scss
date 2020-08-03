@@ -1,17 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 .backgroud {
     position: absolute;
     --backgroud: #c8ffff; 
     padding: 0px;
-    background: url(../../../assets/img/clico.png);
+    background: url(../../../assets/img/back.png);
     background-size: 100% 100%;
     width: 100%;
+    height: 100%;
+}
+.title {
+    position: relative;
+    top: 1%;
+    font-size: 38px;
+    font-family: 'Amatic SC', cursive;
+    color: #6d4c80; 
 }
 ion-list{
+    position: relative;
     background-color:#b5f0f0;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 95px;
-    border-radius: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 2%;
+    border-radius: 25px;  
+    height: 500px;
 }
 ion-radio{
     --color-checked: #ff6c92;
@@ -19,6 +30,7 @@ ion-radio{
 ion-item{
     --background:#b5f0f0;
     --border-radius: 10px;
+    height: 45px;
 }
 img{
     height: 33px;
@@ -33,7 +45,7 @@ ion-fab{
 .text1{
     width: 100px;
     margin-left: 10%;
-    margin-top: 4px;
+    margin-top: 2px;
 }
 .text2{
     width: 200px;
@@ -51,9 +63,5 @@ ion-fab{
 }
 .ultimo-text{
     position: relative;
-    margin-top: 4px;
-}
-.rodape{
-    margin-top: 5px;
-    margin-bottom: 20px;
+    margin-top: 2px;
 }

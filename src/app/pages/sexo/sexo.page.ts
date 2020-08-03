@@ -11,8 +11,8 @@ export class SexoPage implements OnInit {
   constructor(public AlertController: AlertController) { }
   async presentAlert1() {
     const alert = await this.AlertController.create({
-      header: 'Existe idade ideal para a menina começar a fazer sexo?',
-      message: 'A menina deveria esperar até os 16 anos para começar a ter relação sexual. Por que? Ter sexo antes de 16 anos pode levar a arrependimento, depressão e aumento de doenças no útero.',
+      header: 'Is there an ideal age for a girl to start having sex?',
+      message: 'The girl should wait until she is 16 years old to start having sex. Why? Having sex before the age of 16 can lead to regret, depression and increased disease in the womb.',
       buttons: ['Ok']
     });
 
@@ -23,8 +23,8 @@ export class SexoPage implements OnInit {
 
   async presentAlert2() {
     const alert = await this.AlertController.create({
-      header: 'Pode usar o mesmo preservativo no sexo vaginal e anal?',
-      message: 'Se começar com o sexo anal precisa trocar a camisinha para fazer sexo vaginal',
+      header: 'Can you use the same condom for vaginal and anal sex?',
+      message: 'If you start with anal sex you need to change the condom to have vaginal sex.',
       buttons: ['Ok']
     });
 

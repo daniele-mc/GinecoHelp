@@ -1,26 +1,28 @@
 <ion-content>
   <div class="backgroud ion-text-center">
+    <div class="title ion-text-center">Sex</div>
     <ion-list>
       <br>
       <div class="cabecalho">
         <img src="../../../assets/icon/sexo.png">
-        <ion-label class="titu ion-text-center"><b> Sexo e desejo sexual</b>
+        <ion-label class="titu ion-text-center"><b> Sex and sexual desire</b>
         </ion-label>
       </div>
       <br>
       <ion-radio-group>
         <ion-list-header>
-          <ion-label><b>É normal não sentir desejo sexual nas relações?</b>
+          <ion-label><b>Is it normal not to feel sexual desire in relationships?</b>
           </ion-label>
         </ion-list-header>
+        <div class="coluna1">
+          <ion-item>
+            <ion-label>Yes</ion-label>
+            <ion-radio slot="start" value="sim" checked></ion-radio>
+          </ion-item>
+        </div>
 
         <ion-item>
-          <ion-label>Sim</ion-label>
-          <ion-radio slot="start" value="sim" checked></ion-radio>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Não</ion-label>
+          <ion-label>No</ion-label>
           <ion-radio slot="start" value="nao"></ion-radio>
         </ion-item>
       </ion-radio-group>
@@ -28,7 +30,7 @@
 
       <ion-radio-group>
         <ion-list-header>
-          <ion-label><b>Como conseguir ter orgasmo?</b>
+          <ion-label><b>How to feel orgasm?</b>
             <ion-input></ion-input>
           </ion-label>
         </ion-list-header>
@@ -36,17 +38,17 @@
 
       <ion-radio-group>
         <ion-list-header>
-          <ion-label><b>Masturbação é algo natural?</b>
+          <ion-label><b>Is masturbation something natural?</b>
           </ion-label>
         </ion-list-header>
-
+        <div class="coluna1">
+          <ion-item>
+            <ion-label>Yes</ion-label>
+            <ion-radio slot="start" value="sim" checked></ion-radio>
+          </ion-item>
+        </div>
         <ion-item>
-          <ion-label>Sim</ion-label>
-          <ion-radio slot="start" value="sim" checked></ion-radio>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Não</ion-label>
+          <ion-label>No</ion-label>
           <ion-radio slot="start" value="nao"></ion-radio>
         </ion-item>
       </ion-radio-group>
@@ -54,23 +56,25 @@
       <br>
       <div class="cabecalho">
         <img src="../../../assets/icon/stop.png">
-        <ion-label class="titu ion-text-center"><b> Abuso sexual</b>
+        <ion-label class="titu ion-text-center"><b> Sexual abuse</b>
         </ion-label>
       </div>
       <br>
       <ion-radio-group>
         <ion-list-header>
-          <ion-label><b>Quando saber se sofreu um abuso sexual?</b>
-            <ion-input></ion-input>
+          <ion-label><b>When to know if you have suffered sexual abuse?</b>
+            <ion-input class="text"></ion-input>
           </ion-label>
         </ion-list-header>
       </ion-radio-group>
     </ion-list>
     <div class="rodape ion-text-center">
-      <ion-button color="primary" href="/gravidez" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
-        <b>voltar</b></ion-button>
+      <ion-button color="primary" href="/saude-relacoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>back</b></ion-button>
       <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>menu</b></ion-button>
+      <ion-button color="primary" href="/gravidez" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>next</b></ion-button>
 
     </div>
   </div>

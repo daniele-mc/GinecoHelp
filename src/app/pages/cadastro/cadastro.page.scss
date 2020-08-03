@@ -31,7 +31,7 @@
    
    }
    
-   .backgroud {
+.backgroud {
     position: static;
     width: 100%;
     height: 100%;
@@ -39,21 +39,21 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-   }
-   ion-slides {
-       height: 80%;
+}
+ion-slides {
+    height: 80%;
        
-       .slide-inner{
-           width: 75%;
-           color: rgb(5, 5, 5);
-           background-color:#ff93ab;
-           border-radius: 10px;
-       }
+    .slide-inner{
+        width: 75%;
+        color: rgb(5, 5, 5);
+        background-color:#ff93ab;
+        border-radius: 10px;
+    }
    
-       ion-item{
-           --border-radius: 10px;
-       }
-   }
+    ion-item{
+        --border-radius: 10px;
+    }
+}
 
 img{
   height: 25px;

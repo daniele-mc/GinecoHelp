@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 .background {
     position: absolute;
     --backgroud: #c8ffff; 
@@ -5,6 +6,7 @@
     background-image: url(../../../assets/img/metodo.jpg);
     background-size: 100% 100%;
     width: 100%;
+    height: 100%;
 }
 
 ion-list{

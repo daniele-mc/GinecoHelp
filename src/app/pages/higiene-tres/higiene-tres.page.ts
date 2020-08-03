@@ -11,8 +11,8 @@ export class HigieneTresPage implements OnInit {
   constructor(public AlertController: AlertController) { }
   async presentAlert1() {
     const alert = await this.AlertController.create({
-      header: 'Roupas apertadas e justas',
-      message: 'O uso de roupas apertadas, quentes e com tecidos sintéticos,  que dificultam a transpiração favorecem a proliferação inadequada de microorganismos e podem favorecer o surgimento de infecções nos genitais.',
+      header: 'Do you wear warm and tight clothes?',
+      message: 'The use of tight, warm clothes with synthetic fabrics, which make sweating difficult, favors the inadequate proliferation of microorganisms and can favor the appearance of infections in the genitals.',
 
       buttons: ['Ok']
     });
@@ -24,8 +24,8 @@ export class HigieneTresPage implements OnInit {
 
   async presentAlert2() {
     const alert = await this.AlertController.create({
-      header: 'Sabonete corporal',
-      message: 'De acordo com as ginecologistas, o melhor sabonete é aquele com ph neutro, sem cor e sem cheiro que não altera a autorregulação das bactérias presentes no canal vaginal e na vulva.',
+      header: 'Do you use soap to wash your vagina?',
+      message: 'According to gynecologists, the best soap is the one with neutral pH, colorless and odorless that does not alter the self-regulation of bacteria present in the vaginal canal and in the vulva.',
       buttons: ['Ok']
     });
 

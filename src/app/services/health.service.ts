@@ -34,7 +34,7 @@ export class HealthService {
       .get()
       .toPromise()
       .then(function (doc) {
-        if ((doc.exists, true)) {
+        if ((doc.exists == true)) {
           existsDoc = true;
         } else {
           existsDoc = false;
@@ -62,5 +62,8 @@ export class HealthService {
     );
   }
 
-  async getHealth(today: string) {}
+  getHealth(today: string) {
+    return this.healthCollection.doc<Health>(today).valueChanges();
+  }
+
 }

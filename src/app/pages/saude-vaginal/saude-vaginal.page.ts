@@ -12,16 +12,12 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./saude-vaginal.page.scss"],
 })
 export class SaudeVaginalPage implements OnInit {
+  private today;
   private health: Health = {};
   private loading: any;
   private healthID: string = null;
-  private routeHealth: string;
   private healthSubscription: Subscription;
-  private day = new Date().getDate();
-  private month = new Date().getMonth() + 1;
-  private year = new Date().getFullYear();
-  private today = this.day + "-" + this.month + "-" + this.year;
-
+ 
   private coceira: boolean = false;
 
   constructor(
@@ -31,28 +27,46 @@ export class SaudeVaginalPage implements OnInit {
     private authService: AuthService,
     private activeRoute: ActivatedRoute,
     private router: Router
-  ) {
-    console.log(this.month);
+
+  ) { }
+
+  ngOnInit() {
+    this.formattingDay();
     this.check();
   }
 
-  ngOnInit() {}
+  formattingDay() {
+    var format = new Date();
+    var day;
+    var month;
+    var year = format.getFullYear();
+    var aux;
 
-  async check() {
-    if ((await this.healthService.checkExists(this.today)) == true) {
-      this.loadHealth();
-      //getHealth(today);
+    if (format.getDate() < 10){
+      day = "0"+format.getDate();
+    } else {
+      day = format.getDate();
     }
-    //console.log(this.healthID);
-    //if (this.healthID) this.loadHealth();
+    if (format.getMonth()+1 < 10){
+      aux = format.getMonth()+1
+      month = "0"+aux;
+    } else {
+      month = format.getMonth()+1;
+    }
+    this.today = day + "-" + month + "-" + year;
   }
 
-  corrimentoHandler(event: any) {
-    this.saveHealth();
+  async check() {
+    console.log((this.today))
+    if ((await this.healthService.checkExists(this.today)) == true) {
+      this.loadHealth();
+    }
   }
 
   loadHealth() {
-    this.healthService.getHealth(this.today);
+    this.healthSubscription = this.healthService.getHealth(this.today).subscribe(data => {
+      this.health = data;
+    });
   }
 
   back() {
@@ -72,7 +86,7 @@ export class SaudeVaginalPage implements OnInit {
 
   tip() {
     this.saveHealth();
-    return this.router.navigate(["/saude-vaginal-dois-dicas"]);
+    return this.router.navigate(["/saude-vaginal-dicas"]);
   }
 
   async saveHealth() {

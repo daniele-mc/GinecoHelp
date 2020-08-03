@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 .backgroud {
     position: absolute;
     width: 100%;
@@ -6,12 +7,47 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-color: #ff6c92;
+    width: 100%;
+    height: 100%;
 }
 
 .container{
     position: absolute;
-    bottom: 10%;
+    bottom: 15%;
     width: 100%;
+}
+
+.bia {
+    position: relative;
+    top: 5%;
+    font-size: 25px;
+    font-family: 'Amatic SC', cursive;
+    color: #6d4c80; 
+    margin-left: 38%;
+}
+
+.title {
+    position: relative;
+    top: 15%;
+    font-size: 39px;
+    font-family: 'Amatic SC', cursive;
+    color: #6d4c80; 
+}
+
+.subtitle {
+    position: relative;
+    top: 15%;
+    font-size: 38px;
+    font-family: 'Amatic SC', cursive;
+    color: #6d4c80; 
+}
+
+.boneca{
+    position: absolute;
+    top: 5%;
+    margin-left: 6%;
+    width: 120px;
+    height: 150px;
 }
 
 ion-button .container{
@@ -19,8 +55,12 @@ ion-button .container{
 }
 
 .rodape{
-    position: relative;
-    top: 90%;
-    color: black;
+    position: absolute;
+    width: 100vw;
+    top: 84.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
     
 }

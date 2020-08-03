@@ -1,42 +1,43 @@
 <ion-content>
   <div class="backgroud ion-text-center">
+    <div class="title ion-text-center">Menstrual cycle</div>
     <ion-list>
       <br>
-      <ion-label><b>Calendário menstrual</b></ion-label>
+      <ion-label><b>Menstrual calendar</b></ion-label>
 
       <ion-radio-group>
 
         <ion-item>
-          <ion-label><b>Inicio</b></ion-label>
+          <ion-label><b>Start</b></ion-label>
           <ion-datetime value="2020-01-01" placeholder="Select Date"></ion-datetime>
         </ion-item>
 
         <ion-item>
-          <ion-label><b>Final</b></ion-label>
+          <ion-label><b>End</b></ion-label>
           <ion-datetime value="2020-01-21" placeholder="Select Date"></ion-datetime>
         </ion-item>
 
         <ion-item>
           <div class="duracao">
             <div>
-              <ion-label><b>Duração do ciclo</b></ion-label>
+              <ion-label><b>Cycle duration</b></ion-label>
             </div>
             <div>
-              <ion-datetime displayFormat="D" placeholder="Selecione quantos dias"></ion-datetime>
+              <ion-datetime displayFormat="D" placeholder="Select how many days"></ion-datetime>
             </div>
           </div>
         </ion-item>
 
         <ion-item>
           <div class="lembrete">
-            <ion-label><b>Lembrete</b></ion-label>
+            <ion-label><b>Reminder</b></ion-label>
             <div>
-              <ion-label>Quantos dias antes:</ion-label>
-              <ion-input placeholder="Digite quantos dias"></ion-input>
+              <ion-label>How many days before:</ion-label>
+              <ion-input placeholder="Enter how many days"></ion-input>
             </div>
             <div>
-              <ion-label>Hora do lembrete:</ion-label>
-              <ion-datetime displayFormat="HH:mm" placeholder="Selecione hora"></ion-datetime>
+              <ion-label>Reminder time:</ion-label>
+              <ion-datetime displayFormat="HH:mm" placeholder="Select the time"></ion-datetime>
             </div>
           </div>
         </ion-item>
@@ -47,12 +48,12 @@
     </ion-list>
     <div class="rodape ion-text-center">
       <ion-button color="primary" href="/higiene-tres" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
-        <b>voltar</b>
+        <b>back</b>
       </ion-button>
       <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
       </ion-button>
       <ion-button color="primary" href="/ciclo-menstrual-dois" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
-        <b>próximo</b>
+        <b>next</b>
       </ion-button>
     </div>
   </div>

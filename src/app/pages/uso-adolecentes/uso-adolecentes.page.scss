@@ -1,17 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 .background {
     position: absolute;
     --backgroud: #c8ffff; 
     padding: 0px;
-    background-image: url(../../../assets/img/metodo.jpg);
+    background-image: url(../../../assets/img/back.png);
     background-size: 100% 100%;
     width: 100%;
+    height: 100%;
 }
-
+.title {
+    position: relative;
+    top: 1%;
+    font-size: 38px;
+    font-family: 'Amatic SC', cursive;
+    color: #6d4c80; 
+}
 ion-list{
     background-color:#b5f0f0;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 120px;
+    margin-top: 4%;
     border-radius: 25px;
 }
 .cabecalho{
@@ -34,39 +42,36 @@ ion-list-header{
 }
 
 ion-fab{
-    position: absolute;
-    bottom: 55px;
-    margin-left: 80%;
+    top: 10%;
+    margin-left: 70%;  
 }
-//botão boneca
 .usar{
+    top: 23%;
     position: absolute;
-    top: 35%;
-    margin-left: 75%;
+    right: 8%;
+    height: 80px;
 }
 .infeccao{
+    top: 45%;
     position: absolute;
-    top: 57%;
-    margin-left: 75%;
+    right: 8%;
+    height: 80px;
 }
 .troca{
+    top: 67%;
     position: absolute;
-    top: 79%;
-    margin-left: 75%;
+    right: 8%;
+    height: 80px;
 }
-//tamanho do botão boneca
 ion-fab-button{
-    width: 85px;
+    width: 80px;
+    height: 80px;
+}
+.boneca{
+    width: 70px;
     height: 85px;
 }
 ion-list-header{
     margin-left: 2%;
 }
-.rodape{
-    margin-top: 5px;
-    margin-bottom: 55px;
-}
-.boneca{
-    width: 100px;
-    height: 100px
-}
+

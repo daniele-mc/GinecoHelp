@@ -1,12 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 .backgroud {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url(../../../assets/img/dicas.jpg);
+    background: url(../../../assets/img/back.png);
     background-repeat: no-repeat;
     background-size: 100%;
     background-color: #ff6c92;
 }
+
+.title {
+    position: relative;
+    top: 7%;
+    font-size: 55px;
+    font-family: 'Amatic SC', cursive;
+    color: #6d4c80; 
+}
+
 .container{
     position: absolute;
     top: 20%;
@@ -16,7 +26,7 @@
 
 .rodape{
     position: relative;
-    top: 85%;
+    top: 74%;
     color: black;
     
 }
