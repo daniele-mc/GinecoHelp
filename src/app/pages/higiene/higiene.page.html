@@ -4,7 +4,7 @@
     <ion-list>
       <br>
       <ion-label class="titu ion-text-center"><b>Intimate hygiene </b></ion-label>
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.hygienicShower">
         <ion-list-header>
           <ion-label><img src="../../../assets/icon/ducha.png"><b> Do you use a vaginal / hygienic shower?</b>
           </ion-label>
@@ -12,7 +12,7 @@
 
         <ion-item>
           <ion-label>Yes</ion-label>
-          <ion-radio slot="start" value="sim" checked></ion-radio>
+          <ion-radio slot="start" value="sim"></ion-radio>
         </ion-item>
 
         <ion-item>
@@ -24,14 +24,14 @@
         <ion-label>Should I use?</ion-label>
       </ion-item>
 
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.dailyProtector">
         <ion-list-header>
           <ion-label><img src="../../../assets/icon/protetor.png"><b> Do you use daily protector?</b></ion-label>
         </ion-list-header>
 
         <ion-item>
           <ion-label>Yes</ion-label>
-          <ion-radio slot="start" value="sim" checked></ion-radio>
+          <ion-radio slot="start" value="sim"></ion-radio>
         </ion-item>
 
         <ion-item>
@@ -46,11 +46,11 @@
     </ion-list>
 
     <div class="rodape ion-text-center">
-      <ion-button color="primary" href="/saude-vaginal-dois" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button color="primary" (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>back</b></ion-button>
-      <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button color="primary" (click)="menu()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>menu</b></ion-button>
-      <ion-button color="primary" href="/higiene-dois" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button color="primary" (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>next</b></ion-button>
     </div>
   </div>

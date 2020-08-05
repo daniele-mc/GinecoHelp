@@ -21,9 +21,6 @@ export class HealthService {
     this.healthCollection = this.afs.collection<Health>(
       "Users/" + this.authService.getAuth().currentUser.uid + "/Health"
     );
-    //const userID = this.authService.getAuth().currentUser.uid;
-    //const doc_ref = firebase.collection('my_collection').document('my_document')
-    //this.healthCollection = this.afs.collection<Health>(this.authService.getAuth().currentUser.uid);
   }
 
   async checkExists(today: string) {

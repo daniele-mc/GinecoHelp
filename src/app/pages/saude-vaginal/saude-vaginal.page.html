@@ -41,7 +41,7 @@
       <ion-item>
         <img src="../../../assets/icon/corrimento.png">
         <ion-label>Discharge</ion-label>
-        <ion-select id="corrimento" placeholder="Select" [(ngModel)]="health.corrimento" multiple="true">
+        <ion-select id="corrimento" placeholder="Select" [(ngModel)]="health.discharge" multiple="true">
           <ion-select-option value="transparente">Transparent </ion-select-option>
           <ion-select-option value="branco">White</ion-select-option>
           <ion-select-option value="amarelo">Yellow</ion-select-option>
@@ -55,11 +55,11 @@
       <ion-item>
         <img src="../../../assets/icon/coceira.png">
         <ion-label> Itch</ion-label>
-        <ion-toggle [(ngModel)]="coceira">
+        <ion-toggle [(ngModel)]="health.itch">
         </ion-toggle>
       </ion-item>
 
-      <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.dorNaRelacao">
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.painSex"> 
         <ion-list-header>
           <ion-label>
             <div>

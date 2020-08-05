@@ -17,8 +17,6 @@ export class SaudeVaginalPage implements OnInit {
   private loading: any;
   private healthID: string = null;
   private healthSubscription: Subscription;
- 
-  private coceira: boolean = false;
 
   constructor(
     private healthService: HealthService,
@@ -57,7 +55,6 @@ export class SaudeVaginalPage implements OnInit {
   }
 
   async check() {
-    console.log((this.today))
     if ((await this.healthService.checkExists(this.today)) == true) {
       this.loadHealth();
     }
@@ -100,16 +97,8 @@ export class SaudeVaginalPage implements OnInit {
         this.health.ardor = "indefinido";
       }
 
-      if (this.health.dorNaRelacao == null) {
-        this.health.dorNaRelacao = "indefinido";
-      }
-
-      if (this.coceira == false) {
-        this.health.coceira = "nao";
-      }
-
-      if (this.coceira == true) {
-        this.health.coceira = "sim";
+      if (this.health.painSex == null) {
+        this.health.painSex = "indefinido";
       }
 
       try {

@@ -4,7 +4,7 @@
     <ion-list>
       <br>
       <ion-label class="titu ion-text-center"><b>Intimate hygiene</b></ion-label>
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.sleepPanties"> 
         <ion-list-header>
           <ion-label>
             <div>
@@ -20,7 +20,7 @@
 
         <ion-item>
           <ion-label>Yes</ion-label>
-          <ion-radio slot="start" value="sim" checked></ion-radio>
+          <ion-radio slot="start" value="sim"></ion-radio>
         </ion-item>
 
         <ion-item>
@@ -32,7 +32,7 @@
         <ion-label>Should I use?</ion-label>
       </ion-item>
 
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.absorbentInternal">
         <ion-list-header>
           <ion-label>
             <div>
@@ -40,7 +40,7 @@
                 <img src="../../../assets/icon/absorvente.png" style="float: left">
               </div>
               <div class="text">
-                <b>Do you use absorbent interna?</b>
+                <b>Do you use absorbent internal?</b>
               </div>
             </div>
           </ion-label>
@@ -48,7 +48,7 @@
 
         <ion-item>
           <ion-label>Yes</ion-label>
-          <ion-radio slot="start" value="sim" checked></ion-radio>
+          <ion-radio slot="start" value="sim"></ion-radio>
         </ion-item>
 
         <ion-item>
@@ -62,11 +62,11 @@
       <br>
     </ion-list>
     <div class="rodape ion-text-center">
-      <ion-button color="primary" href="/higiene" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button color="primary" (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>back</b></ion-button>
-      <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button color="primary" (click)="menu()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>menu</b></ion-button>
-      <ion-button color="primary" href="/higiene-tres" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button color="primary" (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>next</b></ion-button>
     </div>
   </div>

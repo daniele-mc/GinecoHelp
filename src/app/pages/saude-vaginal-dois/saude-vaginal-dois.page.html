@@ -5,16 +5,15 @@
 
       <ion-list-header><b>Feel or have the symptoms:</b></ion-list-header>
 
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.bleeding"> 
         <ion-list-header>
-
           <ion-label><img src="../../../assets/icon/sangrament.png"><b>Bleeding</b></ion-label>
         </ion-list-header>
 
         <ion-item>
           <img src="../../../assets/icon/sangue.png" class="leve">
           <ion-label>Light</ion-label>
-          <ion-radio slot="start" value="leve" checked></ion-radio>
+          <ion-radio slot="start" value="leve"></ion-radio>
         </ion-item>
 
         <ion-item>
@@ -37,16 +36,15 @@
 
       </ion-radio-group>
 
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.colic">
         <ion-list-header>
-
           <ion-label><img src="../../../assets/icon/colica.png"><b>Colic</b></ion-label>
         </ion-list-header>
 
         <ion-item>
           <img src="../../../assets/icon/dor.png" class="leve">
           <ion-label>Low</ion-label>
-          <ion-radio slot="start" value="fraca" checked></ion-radio>
+          <ion-radio slot="start" value="fraca"></ion-radio>
         </ion-item>
 
         <ion-item>
@@ -65,11 +63,11 @@
 
     </ion-list>
     <div class="rodape ion-text-center">
-      <ion-button href="/saude-vaginal" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>back</b>
+      <ion-button (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>back</b>
       </ion-button>
-      <ion-button href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
+      <ion-button (click)="menu()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
       </ion-button>
-      <ion-button href="/higiene" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>next</b>
+      <ion-button (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>next</b>
       </ion-button>
     </div>
 
