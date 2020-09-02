@@ -11,8 +11,8 @@ export class GravidezPage implements OnInit {
   constructor(public AlertController: AlertController) { }
   async presentAlert1() {
     const alert = await this.AlertController.create({
-      header: 'Can you have sex during pregnancy?',
-      message: 'Yes, if the pregnancy is normal. Talk to your doctor, he will tell you if everything is fine.',
+      header: 'Pode fazer sexo na gravidez?',
+      message: 'Sim, se a gravidez for normal. fale com seu médico, ele vai dizer se está tudo bem.',
       buttons: ['Ok']
     });
 
@@ -23,8 +23,8 @@ export class GravidezPage implements OnInit {
 
   async presentAlert2() {
     const alert = await this.AlertController.create({
-      header: 'How long after childbirth can you have sex?',
-      message: 'The return to sexual relations depends on the type of childbirth. If it is normal, without an episode it is shorter but if it is cesarean it varies around 6 to 8 weeks.',
+      header: 'Quanto tempo após o parto pode fazer sexo?',
+      message: 'O retorno às relações sexuais depende do tipo de parto. se for normal, sem episio é mais breve mas se for cesárea varia em torno de 6 a 8 semanas.',
       buttons: ['Ok']
     });
 

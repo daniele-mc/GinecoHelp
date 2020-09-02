@@ -1,9 +1,9 @@
 <ion-content>
   <div class="backgroud ion-text-left">
-    <div class="title ion-text-center">Vaginal health</div>
+    <div class="title ion-text-center">Saúde vaginal</div>
     <ion-list class="lista">
 
-      <ion-list-header><b>Feel or have the symptoms:</b></ion-list-header>
+      <ion-list-header><b>Sente ou possui os sintomas:</b></ion-list-header>
 
       <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.ardor">
         <ion-list-header>
@@ -12,26 +12,26 @@
         <div class="coluna1">
           <ion-item>
             <img src="../../../assets/icon/nenhum.png">
-            <ion-label>None</ion-label>
+            <ion-label>Nenhum</ion-label>
             <ion-radio slot="start" value="nenhum"></ion-radio>
           </ion-item>
 
           <ion-item>
             <img src="../../../assets/icon/baixo.png">
-            <ion-label>Low</ion-label>
+            <ion-label>Baixo</ion-label>
             <ion-radio slot="start" value="baixo"></ion-radio>
           </ion-item>
         </div>
         <div class="coluna2">
           <ion-item>
             <img src="../../../assets/icon/medio.png">
-            <ion-label>Medium</ion-label>
+            <ion-label>Médio</ion-label>
             <ion-radio slot="start" value="medio"></ion-radio>
           </ion-item>
 
           <ion-item>
             <img src="../../../assets/icon/intenso.png">
-            <ion-label>High</ion-label>
+            <ion-label>Intenso</ion-label>
             <ion-radio slot="start" value="intenso"></ion-radio>
           </ion-item>
         </div>
@@ -40,21 +40,21 @@
 
       <ion-item>
         <img src="../../../assets/icon/corrimento.png">
-        <ion-label>Discharge</ion-label>
-        <ion-select id="corrimento" placeholder="Select" [(ngModel)]="health.discharge" multiple="true">
-          <ion-select-option value="transparente">Transparent </ion-select-option>
-          <ion-select-option value="branco">White</ion-select-option>
-          <ion-select-option value="amarelo">Yellow</ion-select-option>
-          <ion-select-option value="amarelo esverdeado">Greenish yellow</ion-select-option>
-          <ion-select-option value="marrom">Brown</ion-select-option>
-          <ion-select-option value="sangue">With blood</ion-select-option>
-          <ion-select-option value="rosado">Rosy</ion-select-option>
+        <ion-label>Corrimento</ion-label>
+        <ion-select id="corrimento" placeholder="Selecione" [(ngModel)]="health.discharge" multiple="true">
+          <ion-select-option value="transparente">Transparente </ion-select-option>
+          <ion-select-option value="branco">Branco</ion-select-option>
+          <ion-select-option value="amarelo">Amarelo</ion-select-option>
+          <ion-select-option value="amarelo esverdeado">Amarelo-esverdeado</ion-select-option>
+          <ion-select-option value="marrom">Marrom</ion-select-option>
+          <ion-select-option value="sangue">Com sangue</ion-select-option>
+          <ion-select-option value="rosado">Rosado</ion-select-option>
         </ion-select>
       </ion-item>
 
       <ion-item>
         <img src="../../../assets/icon/coceira.png">
-        <ion-label> Itch</ion-label>
+        <ion-label> Coceira</ion-label>
         <ion-toggle [(ngModel)]="health.itch">
         </ion-toggle>
       </ion-item>
@@ -67,24 +67,24 @@
                 <img src="../../../assets/icon/dor-relacao.png">
               </div>
               <div class="text">
-                <b>Pain in sex:</b>
+                <b>Dor na relação:</b>
               </div>
             </div>
           </ion-label>
         </ion-list-header>
 
         <ion-item>
-          <ion-label>Yes</ion-label>
+          <ion-label>Sim</ion-label>
           <ion-radio slot="start" value="sim"></ion-radio>
         </ion-item>
 
         <ion-item>
-          <ion-label>Sometimes</ion-label>
+          <ion-label>As vezes</ion-label>
           <ion-radio slot="start" value="as vezes"></ion-radio>
         </ion-item>
 
         <ion-item>
-          <ion-label>No</ion-label>
+          <ion-label>Não</ion-label>
           <ion-radio slot="start" value="nao"></ion-radio>
         </ion-item>
       </ion-radio-group>
@@ -93,12 +93,12 @@
 
     <div class="rodape ion-text-center">
       <ion-button class="voltar" (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
-        <b>back</b>
+        <b>voltar</b>
       </ion-button>
       <ion-button class="menu" (click)="menu()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
       </ion-button>
       <ion-button class="proximo" (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
-        <b>next</b>
+        <b>próximo</b>
       </ion-button>
     </div>
 

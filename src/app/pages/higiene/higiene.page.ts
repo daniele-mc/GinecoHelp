@@ -38,8 +38,8 @@ export class HigienePage implements OnInit {
   async presentAlert1() {
     this.saveHealth();
     const alert = await this.AlertController.create({
-      header: 'Do you use a vaginal / hygienic shower?',
-      message: 'Scientific articles show that you should not use a vaginal shower directly on the vagina because it changes the vaginal flora and increases the risk of infections.',
+      header: 'Usa ducha vaginal/higiênica?',
+      message: 'Artigos científicos mostram que não se deve usar ducha vaginal diretamente na vagina porque muda a flora vaginal e aumenta o risco de infecções.',
       buttons: ['Ok']
     });
 
@@ -51,8 +51,8 @@ export class HigienePage implements OnInit {
   async presentAlert2() {
     this.saveHealth();
     const alert = await this.AlertController.create({
-      header: 'Do you use daily protector?',
-      message: 'Gynecological studies show that wearing a daily protector constantly warms and changes the skin, predisposing to genital infections.',
+      header: 'Usa protetor diário?',
+      message: 'Estudos ginecológicos mostram que usar protetor diário constantemente aquece e altera a pele, predispondo a infecções genitais.',
       buttons: ['Ok']
     });
 

@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+import { MbscModule } from '@mobiscroll/angular';
 import { NgModule, LOCALE_ID } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouteReuseStrategy } from "@angular/router";
@@ -14,6 +16,12 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { IonicStorageModule } from "@ionic/storage";
+import { CalendarModule } from 'ion2-calendar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
+import { Ionic4DatepickerModule } from
+    '@logisticinfotech/ionic4-datepicker';
 
 export function createTranslateLoader(http: HttpClient){
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -21,7 +29,9 @@ export function createTranslateLoader(http: HttpClient){
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [
+  imports: [ 
+    FormsModule,  
+    MbscModule, 
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
@@ -31,6 +41,11 @@ export function createTranslateLoader(http: HttpClient){
     HttpClientModule,
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot(),
+    CalendarModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
+    Ionic4DatepickerModule,
+    
   ],
   providers: [
     StatusBar,
@@ -40,4 +55,6 @@ export function createTranslateLoader(http: HttpClient){
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  
+}

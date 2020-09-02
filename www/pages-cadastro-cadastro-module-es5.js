@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-content>\n  <div class=\"backgroud\">\n    <ion-button href=\"/objetivos\" color=\"dark\" class=\"button\">\n      <img src=\"../../../assets/icon/voltar.png\">\n    </ion-button>\n    <ion-slides>\n      <ion-slide>\n        <div class=\"slide-inner ion-padding\">\n          <span>Cadastro</span>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"text\" placeholder=\"nome\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"date\" placeholder=\"\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"email\" placeholder=\"e-mail\" [(ngModel)]=\"userRegister.email\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"password\" placeholder=\"senha\" [(ngModel)]=\"userRegister.password\"></ion-input>\n          </ion-item>\n\n          <ion-button fill=\"outline\" href=\"/opcoes\" class=\"ion-margin-top\" (click)=\"register()\" color=\"primary\"\n            expand=\"block\">\n            Criar conta\n          </ion-button><br>\n          <a><span>termos de uso, politicas de privacidade</span></a>\n        </div>\n\n      </ion-slide>\n    </ion-slides>\n\n  </div>\n</ion-content>"
+module.exports = "<ion-content>\n  <div class=\"backgroud\">\n    <ion-button href=\"/objetivos\" color=\"dark\" class=\"button\">\n      <img src=\"../../../assets/icon/voltar.png\">\n    </ion-button>\n    <ion-slides>\n      <ion-slide>\n        <div class=\"slide-inner ion-padding\">\n          <span>Cadastro</span>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"text\" placeholder=\"nome\" [(ngModel)]=\"user.name\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"date\" placeholder=\"\" [(ngModel)]=\"user.birthDate\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"email\" placeholder=\"e-mail\" [(ngModel)]=\"user.email\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"password\" placeholder=\"senha\" [(ngModel)]=\"user.password\"></ion-input>\n          </ion-item>\n\n          <ion-button fill=\"outline\" class=\"ion-margin-top\" (click)=\"register()\" color=\"primary\" expand=\"block\">\n            Criar conta\n          </ion-button><br>\n          <a><span>Termos de uso, politicas de privacidade</span></a>\n        </div>\n\n      </ion-slide>\n    </ion-slides>\n\n  </div>\n</ion-content>"
 
 /***/ }),
 
@@ -103,7 +103,7 @@ var CadastroPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  position: absolute;\n  left: 0;\n  right: 0;\n  width: 75%;\n  margin: 0 auto;\n  z-index: 2;\n}\n.container.top {\n  top: 16%;\n  border-radius: 10px;\n  background-color: #ff93ab;\n}\n.container.top ion-segment ion-segment-button {\n  color: black;\n  font-family: Verdana, Geneva, Tahoma, sans-serif;\n  border: none;\n}\n.container.top ion-segment ion-segment-button ion-label {\n  size: 100px;\n}\n.container.botton {\n  bottom: 5%;\n}\n.container.botton span {\n  color: #ffffff;\n}\n.backgroud {\n  position: static;\n  width: 100%;\n  height: 100%;\n  background: url('back.png');\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: center;\n}\nion-slides {\n  height: 80%;\n}\nion-slides .slide-inner {\n  width: 75%;\n  color: #050505;\n  background-color: #ff93ab;\n  border-radius: 10px;\n}\nion-slides ion-item {\n  --border-radius: 10px;\n}\nimg {\n  height: 25px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2RhbmkvRG9jdW1lbnRzL2JvbHNhL2FwL0dpbmVjb0hlbHAvc3JjL2FwcC9wYWdlcy9jYWRhc3Ryby9jYWRhc3Ryby5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2NhZGFzdHJvL2NhZGFzdHJvLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxVQUFBO0VBQ0EsY0FBQTtFQUNBLFVBQUE7QUNDSjtBREFJO0VBRUksUUFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7QUNDUjtBREVXO0VBQ0ksWUFBQTtFQUNBLGdEQUFBO0VBQ0EsWUFBQTtBQ0FmO0FEQ2U7RUFDSSxXQUFBO0FDQ25CO0FESUk7RUFDSSxVQUFBO0FDRlI7QURHTztFQUNJLGNBQUE7QUNEWDtBRE9HO0VBQ0MsZ0JBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLDJCQUFBO0VBQ0EsNEJBQUE7RUFDQSx3QkFBQTtFQUNBLDJCQUFBO0FDSko7QURNRztFQUNJLFdBQUE7QUNIUDtBREtPO0VBQ0ksVUFBQTtFQUNBLGNBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0FDSFg7QURNTztFQUNJLHFCQUFBO0FDSlg7QURRQTtFQUNFLFlBQUE7QUNMRiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2NhZGFzdHJvL2NhZGFzdHJvLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXJ7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIGxlZnQ6IDA7XG4gICAgcmlnaHQ6IDA7XG4gICAgd2lkdGg6IDc1JTtcbiAgICBtYXJnaW46IDAgYXV0bztcbiAgICB6LWluZGV4OiAyO1xuICAgICYudG9we1xuICAgIFxuICAgICAgICB0b3A6MTYlO1xuICAgICAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmY5M2FiO1xuICAgICAgICBpb24tc2VnbWVudHtcbiAgIFxuICAgICAgICAgICBpb24tc2VnbWVudC1idXR0b257XG4gICAgICAgICAgICAgICBjb2xvcjogYmxhY2s7XG4gICAgICAgICAgICAgICBmb250LWZhbWlseTogVmVyZGFuYSwgR2VuZXZhLCBUYWhvbWEsIHNhbnMtc2VyaWY7XG4gICAgICAgICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICAgICAgICAgICBpb24tbGFiZWx7XG4gICAgICAgICAgICAgICAgICAgc2l6ZTogMTAwcHg7XG4gICAgICAgICAgICAgICB9XG4gICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgIH1cbiAgICAmLmJvdHRvbntcbiAgICAgICAgYm90dG9tOiA1JTtcbiAgICAgICBzcGFuIHtcbiAgICAgICAgICAgY29sb3I6ICNmZmZmZmY7XG4gICAgICAgfVxuICAgIH1cbiAgIFxuICAgfVxuICAgXG4gICAuYmFja2dyb3VkIHtcbiAgICBwb3NpdGlvbjogc3RhdGljO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBiYWNrZ3JvdW5kOiB1cmwoLi4vLi4vLi4vYXNzZXRzL2ltZy9iYWNrLnBuZyk7XG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgICBiYWNrZ3JvdW5kLXNpemU6IGNvbnRhaW47XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xuICAgfVxuICAgaW9uLXNsaWRlcyB7XG4gICAgICAgaGVpZ2h0OiA4MCU7XG4gICAgICAgXG4gICAgICAgLnNsaWRlLWlubmVye1xuICAgICAgICAgICB3aWR0aDogNzUlO1xuICAgICAgICAgICBjb2xvcjogcmdiKDUsIDUsIDUpO1xuICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiNmZjkzYWI7XG4gICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gICAgICAgfVxuICAgXG4gICAgICAgaW9uLWl0ZW17XG4gICAgICAgICAgIC0tYm9yZGVyLXJhZGl1czogMTBweDtcbiAgICAgICB9XG4gICB9XG5cbmltZ3tcbiAgaGVpZ2h0OiAyNXB4O1xufSIsIi5jb250YWluZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICB3aWR0aDogNzUlO1xuICBtYXJnaW46IDAgYXV0bztcbiAgei1pbmRleDogMjtcbn1cbi5jb250YWluZXIudG9wIHtcbiAgdG9wOiAxNiU7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZjkzYWI7XG59XG4uY29udGFpbmVyLnRvcCBpb24tc2VnbWVudCBpb24tc2VnbWVudC1idXR0b24ge1xuICBjb2xvcjogYmxhY2s7XG4gIGZvbnQtZmFtaWx5OiBWZXJkYW5hLCBHZW5ldmEsIFRhaG9tYSwgc2Fucy1zZXJpZjtcbiAgYm9yZGVyOiBub25lO1xufVxuLmNvbnRhaW5lci50b3AgaW9uLXNlZ21lbnQgaW9uLXNlZ21lbnQtYnV0dG9uIGlvbi1sYWJlbCB7XG4gIHNpemU6IDEwMHB4O1xufVxuLmNvbnRhaW5lci5ib3R0b24ge1xuICBib3R0b206IDUlO1xufVxuLmNvbnRhaW5lci5ib3R0b24gc3BhbiB7XG4gIGNvbG9yOiAjZmZmZmZmO1xufVxuXG4uYmFja2dyb3VkIHtcbiAgcG9zaXRpb246IHN0YXRpYztcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgYmFja2dyb3VuZDogdXJsKC4uLy4uLy4uL2Fzc2V0cy9pbWcvYmFjay5wbmcpO1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICBiYWNrZ3JvdW5kLXNpemU6IGNvbnRhaW47XG4gIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcbn1cblxuaW9uLXNsaWRlcyB7XG4gIGhlaWdodDogODAlO1xufVxuaW9uLXNsaWRlcyAuc2xpZGUtaW5uZXIge1xuICB3aWR0aDogNzUlO1xuICBjb2xvcjogIzA1MDUwNTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmOTNhYjtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbn1cbmlvbi1zbGlkZXMgaW9uLWl0ZW0ge1xuICAtLWJvcmRlci1yYWRpdXM6IDEwcHg7XG59XG5cbmltZyB7XG4gIGhlaWdodDogMjVweDtcbn0iXX0= */"
+module.exports = ".container {\n  position: absolute;\n  left: 0;\n  right: 0;\n  width: 75%;\n  margin: 0 auto;\n  z-index: 2;\n}\n.container.top {\n  top: 16%;\n  border-radius: 10px;\n  background-color: #ff93ab;\n}\n.container.top ion-segment ion-segment-button {\n  color: black;\n  font-family: Verdana, Geneva, Tahoma, sans-serif;\n  border: none;\n}\n.container.top ion-segment ion-segment-button ion-label {\n  size: 100px;\n}\n.container.botton {\n  bottom: 5%;\n}\n.container.botton span {\n  color: #ffffff;\n}\n.backgroud {\n  position: static;\n  width: 100%;\n  height: 100%;\n  background: url('back.png');\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: center;\n}\nion-slides {\n  height: 80%;\n}\nion-slides .slide-inner {\n  width: 75%;\n  color: #050505;\n  background-color: #ff93ab;\n  border-radius: 10px;\n}\nion-slides ion-item {\n  --border-radius: 10px;\n}\nimg {\n  height: 25px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2RhbmkvRG9jdW1lbnRzL2JvbHNhL2FwL0dpbmVjb0hlbHAvc3JjL2FwcC9wYWdlcy9jYWRhc3Ryby9jYWRhc3Ryby5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2NhZGFzdHJvL2NhZGFzdHJvLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxVQUFBO0VBQ0EsY0FBQTtFQUNBLFVBQUE7QUNDSjtBREFJO0VBRUksUUFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7QUNDUjtBREVXO0VBQ0ksWUFBQTtFQUNBLGdEQUFBO0VBQ0EsWUFBQTtBQ0FmO0FEQ2U7RUFDSSxXQUFBO0FDQ25CO0FESUk7RUFDSSxVQUFBO0FDRlI7QURHTztFQUNJLGNBQUE7QUNEWDtBRE9BO0VBQ0ksZ0JBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLDJCQUFBO0VBQ0EsNEJBQUE7RUFDQSx3QkFBQTtFQUNBLDJCQUFBO0FDSko7QURNQTtFQUNJLFdBQUE7QUNISjtBREtJO0VBQ0ksVUFBQTtFQUNBLGNBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0FDSFI7QURNSTtFQUNJLHFCQUFBO0FDSlI7QURRQTtFQUNFLFlBQUE7QUNMRiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2NhZGFzdHJvL2NhZGFzdHJvLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXJ7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIGxlZnQ6IDA7XG4gICAgcmlnaHQ6IDA7XG4gICAgd2lkdGg6IDc1JTtcbiAgICBtYXJnaW46IDAgYXV0bztcbiAgICB6LWluZGV4OiAyO1xuICAgICYudG9we1xuICAgIFxuICAgICAgICB0b3A6MTYlO1xuICAgICAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmY5M2FiO1xuICAgICAgICBpb24tc2VnbWVudHtcbiAgIFxuICAgICAgICAgICBpb24tc2VnbWVudC1idXR0b257XG4gICAgICAgICAgICAgICBjb2xvcjogYmxhY2s7XG4gICAgICAgICAgICAgICBmb250LWZhbWlseTogVmVyZGFuYSwgR2VuZXZhLCBUYWhvbWEsIHNhbnMtc2VyaWY7XG4gICAgICAgICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICAgICAgICAgICBpb24tbGFiZWx7XG4gICAgICAgICAgICAgICAgICAgc2l6ZTogMTAwcHg7XG4gICAgICAgICAgICAgICB9XG4gICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgIH1cbiAgICAmLmJvdHRvbntcbiAgICAgICAgYm90dG9tOiA1JTtcbiAgICAgICBzcGFuIHtcbiAgICAgICAgICAgY29sb3I6ICNmZmZmZmY7XG4gICAgICAgfVxuICAgIH1cbiAgIFxuICAgfVxuICAgXG4uYmFja2dyb3VkIHtcbiAgICBwb3NpdGlvbjogc3RhdGljO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBiYWNrZ3JvdW5kOiB1cmwoLi4vLi4vLi4vYXNzZXRzL2ltZy9iYWNrLnBuZyk7XG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgICBiYWNrZ3JvdW5kLXNpemU6IGNvbnRhaW47XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xufVxuaW9uLXNsaWRlcyB7XG4gICAgaGVpZ2h0OiA4MCU7XG4gICAgICAgXG4gICAgLnNsaWRlLWlubmVye1xuICAgICAgICB3aWR0aDogNzUlO1xuICAgICAgICBjb2xvcjogcmdiKDUsIDUsIDUpO1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiNmZjkzYWI7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gICAgfVxuICAgXG4gICAgaW9uLWl0ZW17XG4gICAgICAgIC0tYm9yZGVyLXJhZGl1czogMTBweDtcbiAgICB9XG59XG5cbmltZ3tcbiAgaGVpZ2h0OiAyNXB4O1xufSIsIi5jb250YWluZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICB3aWR0aDogNzUlO1xuICBtYXJnaW46IDAgYXV0bztcbiAgei1pbmRleDogMjtcbn1cbi5jb250YWluZXIudG9wIHtcbiAgdG9wOiAxNiU7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZjkzYWI7XG59XG4uY29udGFpbmVyLnRvcCBpb24tc2VnbWVudCBpb24tc2VnbWVudC1idXR0b24ge1xuICBjb2xvcjogYmxhY2s7XG4gIGZvbnQtZmFtaWx5OiBWZXJkYW5hLCBHZW5ldmEsIFRhaG9tYSwgc2Fucy1zZXJpZjtcbiAgYm9yZGVyOiBub25lO1xufVxuLmNvbnRhaW5lci50b3AgaW9uLXNlZ21lbnQgaW9uLXNlZ21lbnQtYnV0dG9uIGlvbi1sYWJlbCB7XG4gIHNpemU6IDEwMHB4O1xufVxuLmNvbnRhaW5lci5ib3R0b24ge1xuICBib3R0b206IDUlO1xufVxuLmNvbnRhaW5lci5ib3R0b24gc3BhbiB7XG4gIGNvbG9yOiAjZmZmZmZmO1xufVxuXG4uYmFja2dyb3VkIHtcbiAgcG9zaXRpb246IHN0YXRpYztcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgYmFja2dyb3VuZDogdXJsKC4uLy4uLy4uL2Fzc2V0cy9pbWcvYmFjay5wbmcpO1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICBiYWNrZ3JvdW5kLXNpemU6IGNvbnRhaW47XG4gIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcbn1cblxuaW9uLXNsaWRlcyB7XG4gIGhlaWdodDogODAlO1xufVxuaW9uLXNsaWRlcyAuc2xpZGUtaW5uZXIge1xuICB3aWR0aDogNzUlO1xuICBjb2xvcjogIzA1MDUwNTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmOTNhYjtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbn1cbmlvbi1zbGlkZXMgaW9uLWl0ZW0ge1xuICAtLWJvcmRlci1yYWRpdXM6IDEwcHg7XG59XG5cbmltZyB7XG4gIGhlaWdodDogMjVweDtcbn0iXX0= */"
 
 /***/ }),
 
@@ -121,21 +121,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+
 
 
 
 
 var CadastroPage = /** @class */ (function () {
-    function CadastroPage(loadingCtrl, toastCtrl, authService) {
+    function CadastroPage(loadingCtrl, toastCtrl, authService, afs) {
         this.loadingCtrl = loadingCtrl;
         this.toastCtrl = toastCtrl;
         this.authService = authService;
-        this.userRegister = {};
+        this.afs = afs;
+        this.user = {};
     }
     CadastroPage.prototype.ngOnInit = function () { };
     CadastroPage.prototype.register = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var error_1, message;
+            var newUser, newUserObject, error_1, message;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.presentLoading()];
@@ -143,12 +146,17 @@ var CadastroPage = /** @class */ (function () {
                         _a.sent();
                         _a.label = 2;
                     case 2:
-                        _a.trys.push([2, 4, 5, 6]);
-                        return [4 /*yield*/, this.authService.register(this.userRegister)];
+                        _a.trys.push([2, 5, 6, 7]);
+                        return [4 /*yield*/, this.authService.register(this.user)];
                     case 3:
-                        _a.sent();
-                        return [3 /*break*/, 6];
+                        newUser = _a.sent();
+                        newUserObject = Object.assign({}, this.user);
+                        delete newUserObject.password;
+                        return [4 /*yield*/, this.afs.collection('Users').doc(newUser.user.uid).set(newUserObject)];
                     case 4:
+                        _a.sent();
+                        return [3 /*break*/, 7];
+                    case 5:
                         error_1 = _a.sent();
                         console.error(error_1);
                         message = void 0;
@@ -164,11 +172,11 @@ var CadastroPage = /** @class */ (function () {
                                 break;
                         }
                         this.presentToast(message);
-                        return [3 /*break*/, 6];
-                    case 5:
+                        return [3 /*break*/, 7];
+                    case 6:
                         this.loading.dismiss();
                         return [7 /*endfinally*/];
-                    case 6: return [2 /*return*/];
+                    case 7: return [2 /*return*/];
                 }
             });
         });
@@ -205,7 +213,8 @@ var CadastroPage = /** @class */ (function () {
     CadastroPage.ctorParameters = function () { return [
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"] },
-        { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] }
+        { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
+        { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"] }
     ]; };
     CadastroPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -215,7 +224,8 @@ var CadastroPage = /** @class */ (function () {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"],
-            src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])
+            src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"],
+            _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"]])
     ], CadastroPage);
     return CadastroPage;
 }());

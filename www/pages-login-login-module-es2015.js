@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-content>\n  <div class=\"backgroud\">\n    <ion-button href=\"/objetivos\" color=\"dark\" class=\"button\">\n      <img src=\"../../../assets/icon/voltar.png\">\n    </ion-button>\n    <ion-slides>\n      <ion-slide>\n        <div class=\"slide-inner ion-padding\">\n          <span>Login</span>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"email\" placeholder=\"E-mail\" [(ngModel)]=\"userLogin.email\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"password\" placeholder=\"Senha\" [(ngModel)]=\"userLogin.password\"></ion-input>\n          </ion-item>\n          <a>\n            <p>Esqueceu a senha?</p>\n          </a>\n          <ion-button fill=\"outline\" href=\"/opcoes\" class=\"ion-margin-top\" (click)=\"login()\" color=\"primary\"\n            expand=\"block\">\n            Continuar\n          </ion-button>\n          <ion-button fill=\"outline\" href=\"/opcoes\" class=\"ion-margin-top\" (click)=\"login()\" color=\"primary\"\n            expand=\"block\">\n            Login com Facebook\n          </ion-button>\n        </div>\n      </ion-slide>\n    </ion-slides>\n\n  </div>\n</ion-content>"
+module.exports = "<ion-content>\n  <div class=\"backgroud\">\n    <ion-button href=\"/objetivos\" color=\"dark\" class=\"button\">\n      <img src=\"../../../assets/icon/voltar.png\">\n    </ion-button>\n    <ion-slides>\n      <ion-slide>\n        <div class=\"slide-inner ion-padding\">\n          <span>Login</span>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"email\" placeholder=\"E-mail\" [(ngModel)]=\"userLogin.email\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"password\" placeholder=\"Senha\" [(ngModel)]=\"userLogin.password\"></ion-input>\n          </ion-item>\n          <a>\n            <p>Esqueceu a senha?</p>\n          </a>\n          <ion-button fill=\"outline\" class=\"ion-margin-top\" (click)=\"login()\" color=\"primary\" expand=\"block\">\n            Continuar\n          </ion-button>\n          <ion-button fill=\"outline\" href=\"/opcoes\" class=\"ion-margin-top\" (click)=\"login()\" color=\"primary\"\n            expand=\"block\">\n            Login com Facebook\n          </ion-button>\n        </div>\n      </ion-slide>\n    </ion-slides>\n\n  </div>\n</ion-content>"
 
 /***/ }),
 
@@ -132,20 +132,20 @@ let LoginPage = class LoginPage {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             yield this.presentLoading();
             try {
-                yield this.authService.register(this.userRegister);
+                yield this.authService.login(this.userLogin);
             }
             catch (error) {
                 console.error(error);
                 let message;
                 switch (error.code) {
-                    case 'auth/email-already-in-use':
-                        message = 'E-mail já utilizado!';
+                    case 'auth/user-not-found':
+                        message = 'Não foi encontrado e-mail correspondente!';
                         break;
                     case 'auth/invalid-email':
                         message = 'E-mail inválido!';
                         break;
-                    case 'auth/weak-password':
-                        message = 'Senha inválida! Por favor, digite uma com mais de 6 caracteres!';
+                    case 'auth/wrong-password':
+                        message = 'Senha inválida!';
                         break;
                 }
                 this.presentToast(message);
@@ -155,34 +155,6 @@ let LoginPage = class LoginPage {
             }
         });
     }
-    /*
-      async register() {
-        await this.presentLoading();
-    
-        try {
-          await this.authService.register(this.userRegister);
-        } catch (error) {
-          console.error(error);
-          let message: string;
-          switch (error.code) {
-            case 'auth/email-already-in-use':
-              message = 'E-mail já utilizado!';
-              break;
-            case 'auth/invalid-email':
-              message = 'E-mail inválido!';
-              break;
-            case 'auth/weak-password':
-              message = 'Senha inválida! Por favor, digite uma com mais de 6 caracteres!'
-              break;
-          }
-    
-          this.presentToast(message);
-    
-        } finally {
-          this.loading.dismiss();
-        }
-    
-      }*/
     presentLoading() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             this.loading = yield this.loadingCtrl.create({ message: 'Por favor, aguarde...' });

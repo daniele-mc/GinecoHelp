@@ -1,43 +1,43 @@
 <ion-content>
   <div class="backgroud ion-text-center">
-    <div class="title ion-text-center">Menstrual cycle</div>
+    <div class="title ion-text-center">Ciclo menstrual</div>
     <ion-list>
       <br>
-      <ion-label><b>Menstrual calendar</b></ion-label>
+      <ion-label><b>Calendário menstrual</b></ion-label>
 
       <ion-radio-group>
 
         <ion-item>
-          <ion-label><b>Start</b></ion-label>
-          <ion-datetime value="2020-01-01" placeholder="Select Date"></ion-datetime>
+          <ion-label><b>Inicio</b></ion-label>
+          <ion-datetime placeholder="Selecione data" [(ngModel)]="health.start" (click)="startCycle()"></ion-datetime>
         </ion-item>
 
         <ion-item>
-          <ion-label><b>End</b></ion-label>
-          <ion-datetime value="2020-01-21" placeholder="Select Date"></ion-datetime>
+          <ion-label><b>Final</b></ion-label>
+          <ion-datetime placeholder="Selecione data" [(ngModel)]="health.end" (click)="endCycle()"></ion-datetime>
         </ion-item>
 
         <ion-item>
           <div class="duracao">
             <div>
-              <ion-label><b>Cycle duration</b></ion-label>
+              <ion-label><b>Duração do ciclo</b></ion-label>
             </div>
             <div>
-              <ion-datetime displayFormat="D" placeholder="Select how many days"></ion-datetime>
+              <ion-datetime displayFormat="D" placeholder="Selecione quantos dias" [(ngModel)]="health.cycleDuration"></ion-datetime>
             </div>
           </div>
         </ion-item>
 
         <ion-item>
           <div class="lembrete">
-            <ion-label><b>Reminder</b></ion-label>
+            <ion-label><b>Lembrete</b></ion-label>
             <div>
-              <ion-label>How many days before:</ion-label>
-              <ion-input placeholder="Enter how many days"></ion-input>
+              <ion-label>Quantos dias antes:</ion-label>
+              <ion-input placeholder="Digite quantos dias" [(ngModel)]="health.reminderDays"></ion-input>
             </div>
             <div>
-              <ion-label>Reminder time:</ion-label>
-              <ion-datetime displayFormat="HH:mm" placeholder="Select the time"></ion-datetime>
+              <ion-label>Hora do lembrete:</ion-label>
+              <ion-datetime displayFormat="HH:mm" placeholder="Selecione hora" [(ngModel)]="health.reminderTime"></ion-datetime>
             </div>
           </div>
         </ion-item>
@@ -47,13 +47,14 @@
       <br>
     </ion-list>
     <div class="rodape ion-text-center">
-      <ion-button color="primary" href="/higiene-tres" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
-        <b>back</b>
+      
+      <ion-button color="primary" (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>voltar</b>
       </ion-button>
-      <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
+      <ion-button color="primary" (click)="menu()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
       </ion-button>
-      <ion-button color="primary" href="/ciclo-menstrual-dois" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
-        <b>next</b>
+      <ion-button color="primary" (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>próximo</b>
       </ion-button>
     </div>
   </div>

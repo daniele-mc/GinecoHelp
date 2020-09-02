@@ -1,18 +1,18 @@
 <ion-content>
   <div class="backgroud ion-text-center">
-    <div class="title ion-text-center">Menstrual cycle</div>
-
-    <ion-calendar [(ngModel)]="dateRange" [options]="optionsRange" [type]="type" [format]="'YYYY-MM-DD'">
+    <div class="title ion-text-center">Ciclo menstrual</div>
+ 
+    <ion-calendar [(ngModel)]="dateRange" [options]="optionsRange" [type]="type" [format]="'YYYY-MM-DD'" [readonly]="false" (click)="teste()">
     </ion-calendar>
 
-    <ion-button color="primary" href="/ciclo-menstrual" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
-      <b>back</b>
+    <ion-button color="primary" (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <b>voltar</b>
     </ion-button>
-    <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+    <ion-button color="primary" (click)="menu()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
       <b>menu</b>
     </ion-button>
-    <ion-button color="primary" href="/sintomas" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
-      <b>next</b>
+    <ion-button color="primary" (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <b>próximo</b>
     </ion-button>
 
   </div>

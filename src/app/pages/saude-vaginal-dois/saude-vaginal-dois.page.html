@@ -1,36 +1,37 @@
 <ion-content>
   <div class="backgroud ion-text-left">
-    <div class="title ion-text-center">Vaginal health</div>
+    <div class="title ion-text-center">Saúde vaginal</div>
     <ion-list class="lista">
 
-      <ion-list-header><b>Feel or have the symptoms:</b></ion-list-header>
+      <ion-list-header><b>Sente ou possui os sintomas:</b></ion-list-header>
 
       <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.bleeding"> 
         <ion-list-header>
-          <ion-label><img src="../../../assets/icon/sangrament.png"><b>Bleeding</b></ion-label>
+          <ion-label>
+            <img src="../../../assets/icon/sangrament.png"><b>Sangramento</b></ion-label>
         </ion-list-header>
 
         <ion-item>
           <img src="../../../assets/icon/sangue.png" class="leve">
-          <ion-label>Light</ion-label>
+          <ion-label>Leve</ion-label>
           <ion-radio slot="start" value="leve"></ion-radio>
         </ion-item>
 
         <ion-item>
           <img src="../../../assets/icon/sangue.png" class="medio">
-          <ion-label>Medium</ion-label>
+          <ion-label>Médio</ion-label>
           <ion-radio slot="start" value="medio"></ion-radio>
         </ion-item>
 
         <ion-item>
           <img src="../../../assets/icon/sangue.png" class="intenso">
-          <ion-label>Intense</ion-label>
+          <ion-label>Intenso</ion-label>
           <ion-radio slot="start" value="intenso"></ion-radio>
         </ion-item>
 
         <ion-item>
           <img src="../../../assets/icon/escape.png">
-          <ion-label>Escape</ion-label>
+          <ion-label>De escape</ion-label>
           <ion-radio slot="start" value="escape"></ion-radio>
         </ion-item>
 
@@ -38,24 +39,24 @@
 
       <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.colic">
         <ion-list-header>
-          <ion-label><img src="../../../assets/icon/colica.png"><b>Colic</b></ion-label>
+          <ion-label><img src="../../../assets/icon/colica.png"><b>Cólicas</b></ion-label>
         </ion-list-header>
 
         <ion-item>
           <img src="../../../assets/icon/dor.png" class="leve">
-          <ion-label>Low</ion-label>
+          <ion-label>Fraca</ion-label>
           <ion-radio slot="start" value="fraca"></ion-radio>
         </ion-item>
 
         <ion-item>
           <img src="../../../assets/icon/dor.png" class="medio">
-          <ion-label>Medium</ion-label>
+          <ion-label>Moderada</ion-label>
           <ion-radio slot="start" value="moderada"></ion-radio>
         </ion-item>
 
         <ion-item>
           <img src="../../../assets/icon/dor.png" class="intenso">
-          <ion-label>High</ion-label>
+          <ion-label>Forte</ion-label>
           <ion-radio slot="start" value="forte"></ion-radio>
         </ion-item>
 
@@ -63,11 +64,11 @@
 
     </ion-list>
     <div class="rodape ion-text-center">
-      <ion-button (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>back</b>
+      <ion-button (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>voltar</b>
       </ion-button>
       <ion-button (click)="menu()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
       </ion-button>
-      <ion-button (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>next</b>
+      <ion-button (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>próximo</b>
       </ion-button>
     </div>
 

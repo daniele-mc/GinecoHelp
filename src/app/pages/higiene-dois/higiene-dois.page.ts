@@ -38,9 +38,8 @@ export class HigieneDoisPage implements OnInit {
   async presentAlert1() {
     this.saveHealth();
     const alert = await this.AlertController.create({
-      header: 'Do you sleep with panties?',
-      message: 'The main benefit of dispensing panties at bedtime is to aerate the genital area minimizing the appearance of vaginal infections.',
-
+      header: 'Dorme com calcinha?',
+      message: 'O principal benefício de dispensar a calcinha na hora de dormir é arejar a região genital minimizando o surgimento de infecções vaginais.',
       buttons: ['Ok']
     });
 
@@ -52,8 +51,8 @@ export class HigieneDoisPage implements OnInit {
   async presentAlert2() {
     this.saveHealth();
     const alert = await this.AlertController.create({
-      header: 'Do you use absorbent internal?',
-      message: 'Using absorbent interna generally does not harm your health, as long as the woman changes the absorbent interna regularly (preferably every 4 hours), do not sleep with it and wash your hands well before changing.',
+      header: 'Usa absorvente interno?',
+      message: 'Usar absorvente interno geralmente não faz mal à saúde, desde que a mulher troque o absorvente com regularidade (de preferência a cada 4 horas), não durma com ele e lave bem as mãos sempre antes da troca.',
       buttons: ['Ok']
     });
 

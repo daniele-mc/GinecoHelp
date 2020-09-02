@@ -11,8 +11,8 @@ export class UsoEmergenciaPage implements OnInit {
   constructor(public AlertController: AlertController) { }
   async presentAlert1() {
     const alert = await this.AlertController.create({
-      header: 'Is the morning-after pill a contraceptive method?',
-      message: 'If you have unprotected sex you can take an emergency pill immediately. It can be taken up to 72 h after sexual relation.',
+      header: 'Pílula do dia seguinte é um método anticoncepcional?',
+      message: 'Se fez sexo sem proteção pode tomar pílula de emergência imediatamente. Ela pode ser tomada até 72 h depois da relação sexual.',
       buttons: ['Ok']
     });
 

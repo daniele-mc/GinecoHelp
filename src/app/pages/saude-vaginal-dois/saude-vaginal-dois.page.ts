@@ -89,7 +89,6 @@ export class SaudeVaginalDoisPage implements OnInit {
 
   async saveHealth() {
     await this.presentLoading();
-    console.log("salvo")
     this.health.userID = this.authService.getAuth().currentUser.uid;
     if (this.healthID) {
     } else {

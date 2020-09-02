@@ -403,46 +403,84 @@ var findCheckedOption = function (el, tagName) {
 
 /***/ }),
 
-/***/ "./src/app/services/auth.service.ts":
-/*!******************************************!*\
-  !*** ./src/app/services/auth.service.ts ***!
-  \******************************************/
-/*! exports provided: AuthService */
+/***/ "./src/app/services/health.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/services/health.service.ts ***!
+  \********************************************/
+/*! exports provided: HealthService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HealthService", function() { return HealthService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
 
 
 
-var AuthService = /** @class */ (function () {
-    function AuthService(afa) {
-        this.afa = afa;
+
+
+var HealthService = /** @class */ (function () {
+    function HealthService(afs, authService) {
+        this.afs = afs;
+        this.authService = authService;
+        this.healthCollection = this.afs.collection("Users/" + this.authService.getAuth().currentUser.uid + "/Health");
     }
-    AuthService.prototype.login = function (user) {
-        return this.afa.auth.signInWithEmailAndPassword(user.email, user.password);
+    HealthService.prototype.checkExists = function (today) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var existsDoc;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.healthCollection
+                            .doc(today)
+                            .get()
+                            .toPromise()
+                            .then(function (doc) {
+                            if ((doc.exists == true)) {
+                                existsDoc = true;
+                            }
+                            else {
+                                existsDoc = false;
+                            }
+                        })
+                            .catch(function (error) { })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/, existsDoc];
+                }
+            });
+        });
     };
-    AuthService.prototype.register = function (user) {
-        return this.afa.auth.createUserWithEmailAndPassword(user.email, user.password);
+    HealthService.prototype.addHealth = function (health) {
+        return this.healthCollection.doc(health.data).set(health);
     };
-    AuthService.prototype.logout = function () {
+    HealthService.prototype.getHealths = function () {
+        return this.healthCollection.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (actions) {
+            return actions.map(function (a) {
+                var data = a.payload.doc.data();
+                // pega o doc e usa o user ID
+                var userId = a.payload.doc.id;
+                return tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({ userId: userId }, data);
+            });
+        }));
     };
-    AuthService.prototype.getAuth = function () {
+    HealthService.prototype.getHealth = function (today) {
+        return this.healthCollection.doc(today).valueChanges();
     };
-    AuthService.ctorParameters = function () { return [
-        { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"] }
+    HealthService.ctorParameters = function () { return [
+        { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"] },
+        { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] }
     ]; };
-    AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
-            providedIn: 'root'
+    HealthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: "root",
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"]])
-    ], AuthService);
-    return AuthService;
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"], src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]])
+    ], HealthService);
+    return HealthService;
 }());
 
 

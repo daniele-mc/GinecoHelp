@@ -13,4 +13,21 @@ export interface Health {
     absorbentInternal?: string;
     tightClothes?: string;
     soap?: string;
+    startDay?: number;
+    startMonth?: number;
+    startYear?: number;
+    start?: Date;
+    endDay?: number;
+    endMonth?: number;
+    endYear?: number;
+    end?: Date;
+    cycleDuration?: number;
+    reminderDays?: string;
+    reminderTime?: string;
+    symptoms?: string;
+    mood?: string;
+    sexualRelation?: string;
+    contraceptiveMethods?: string;
+    contraceptiveMethodsTypes?: string;
+
 }

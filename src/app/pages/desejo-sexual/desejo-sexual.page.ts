@@ -11,8 +11,8 @@ export class DesejoSexualPage implements OnInit {
   constructor(public AlertController: AlertController) { }
   async presentAlert1() {
     const alert = await this.AlertController.create({
-      header: 'How to achieve orgasm?',
-      message: 'The organ of orgasm in women is the clitoris. Less than 30% of women experience orgasm with the movement of the penis inside the vagina. 70% depend on manipulation of the clitoris (masturbation).',
+      header: 'Como conseguir ter  orgasmo?',
+      message: 'O órgão do orgasmo na mulher é o clitóris. Menos de 30% das mulheres tem orgasmo com o movimento do pênis dentro da vagina. 70% dependem de manipulação do clitóris (masturbação).',
       buttons: ['Ok']
     });
 
@@ -23,8 +23,8 @@ export class DesejoSexualPage implements OnInit {
 
   async presentAlert2() {
     const alert = await this.AlertController.create({
-      header: 'Sexual abuse',
-      message: 'If you have suffered sexual abuse talk to your gynecologist or a psychologist who can help you.',
+      header: 'Abuso sexual',
+      message: 'Se você sofreu abuso sexual fale com seu ginecologista ou com um psicólogo que eles podem te ajudar.',
       buttons: ['Ok']
     });
 

@@ -8,13 +8,15 @@ import { CicloMenstrualDoisPageRoutingModule } from './ciclo-menstrual-dois-rout
 import { CicloMenstrualDoisPage } from './ciclo-menstrual-dois.page';
 import { CalendarModule } from 'ion2-calendar';
 
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     CicloMenstrualDoisPageRoutingModule,
-    CalendarModule
+    CalendarModule,
   ],
   declarations: [CicloMenstrualDoisPage]
 })

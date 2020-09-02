@@ -1,9 +1,10 @@
 <ion-content>
   <div class="backgroud ion-text-center">
-    <div class="title ion-text-center">Vaginal health</div>
+    <div class="title ion-text-center">Saúde vaginal</div>
     <ion-list>
       <br>
-      <ion-label class="titu ion-text-center"><b>Intimate hygiene</b></ion-label>
+      <ion-label class="titu ion-text-center">
+        <b>Higiene Íntima</b></ion-label>
       <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.sleepPanties"> 
         <ion-list-header>
           <ion-label>
@@ -12,24 +13,24 @@
                 <img src="../../../assets/icon/calcinha.png" style="float: left">
               </div>
               <div class="text">
-                <b>Do you sleep with panties?</b>
+                <b>Dorme com calcinha?</b>
               </div>
             </div>
           </ion-label>
         </ion-list-header>
 
         <ion-item>
-          <ion-label>Yes</ion-label>
+          <ion-label>Sim</ion-label>
           <ion-radio slot="start" value="sim"></ion-radio>
         </ion-item>
 
         <ion-item>
-          <ion-label>No</ion-label>
+          <ion-label>Não</ion-label>
           <ion-radio slot="start" value="nao"></ion-radio>
         </ion-item>
       </ion-radio-group>
       <ion-item>
-        <ion-label>Should I use?</ion-label>
+        <ion-label>Devo usar?</ion-label>
       </ion-item>
 
       <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.absorbentInternal">
@@ -40,34 +41,34 @@
                 <img src="../../../assets/icon/absorvente.png" style="float: left">
               </div>
               <div class="text">
-                <b>Do you use absorbent internal?</b>
+                <b>Usa absorvente interno?</b>
               </div>
             </div>
           </ion-label>
         </ion-list-header>
 
         <ion-item>
-          <ion-label>Yes</ion-label>
+          <ion-label>Sim</ion-label>
           <ion-radio slot="start" value="sim"></ion-radio>
         </ion-item>
 
         <ion-item>
-          <ion-label>No</ion-label>
+          <ion-label>Não</ion-label>
           <ion-radio slot="start" value="nao"></ion-radio>
         </ion-item>
       </ion-radio-group>
       <ion-item>
-        <ion-label>Should I use?</ion-label>
+        <ion-label>Devo usar?</ion-label>
       </ion-item>
       <br>
     </ion-list>
     <div class="rodape ion-text-center">
       <ion-button color="primary" (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
-        <b>back</b></ion-button>
+        <b>voltar</b></ion-button>
       <ion-button color="primary" (click)="menu()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>menu</b></ion-button>
       <ion-button color="primary" (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
-        <b>next</b></ion-button>
+        <b>próximo</b></ion-button>
     </div>
   </div>
   <ion-fab class="calcinha">

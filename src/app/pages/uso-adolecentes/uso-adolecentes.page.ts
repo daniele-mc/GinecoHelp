@@ -11,8 +11,8 @@ export class UsoAdolecentesPage implements OnInit {
   constructor(public AlertController: AlertController) { }
   async presentAlert1() {
     const alert = await this.AlertController.create({
-      header: 'Can a teenager use an IUD?',
-      message: 'IUD use by teenagers is a very safe method.',
+      header: 'Adolescente pode usar DIU?',
+      message: 'O uso de DIU por adolescentes é um método muito seguro.',
       buttons: ['Ok']
     });
 
@@ -23,8 +23,8 @@ export class UsoAdolecentesPage implements OnInit {
 
   async presentAlert2() {
     const alert = await this.AlertController.create({
-      header: 'IUD causes an infection?',
-      message: 'The IUD does not cause infections. These are caused by unprotected sex.',
+      header: 'DIU provoca alguma infecção?',
+      message: 'O DIU não provoca infecções. Estas são causados por relações sexuais desprotegidas.',
       buttons: ['Ok']
     });
 
@@ -35,7 +35,7 @@ export class UsoAdolecentesPage implements OnInit {
 
   async presentAlert3() {
     const alert = await this.AlertController.create({
-      header: 'Dangerous to get pregnant in exchange for contraceptives?',
+      header: 'Perigoso engravidar na troca de anticoncepcional?',
       message: '',
       buttons: ['Ok']
     });

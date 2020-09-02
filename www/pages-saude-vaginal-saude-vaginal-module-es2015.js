@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-content>\n  <div class=\"backgroud ion-text-left\">\n\n    <ion-list class=\"lista\">\n\n      <ion-list-header><b>Sente ou possui os sintomas:</b></ion-list-header>\n\n      <ion-radio-group>\n        <ion-list-header>\n          <ion-label><img src=\"../../../assets/icon/heart.png\"><b>Ardor</b></ion-label>\n        </ion-list-header>\n\n        <ion-item>\n          <img src=\"../../../assets/icon/nenhum.png\">\n          <ion-label>Nenhum</ion-label>\n          <ion-radio slot=\"start\" value=\"nenhum\" checked></ion-radio>\n        </ion-item>\n\n        <ion-item>\n          <img src=\"../../../assets/icon/baixo.png\">\n          <ion-label>Baixo</ion-label>\n          <ion-radio slot=\"start\" value=\"baixo\" checked></ion-radio>\n        </ion-item>\n\n        <ion-item>\n          <img src=\"../../../assets/icon/medio.png\">\n          <ion-label>Médio</ion-label>\n          <ion-radio slot=\"start\" value=\"medio\"></ion-radio>\n        </ion-item>\n\n        <ion-item>\n          <img src=\"../../../assets/icon/intenso.png\">\n          <ion-label>Intenso</ion-label>\n          <ion-radio slot=\"start\" value=\"intenso\"></ion-radio>\n        </ion-item>\n\n      </ion-radio-group>\n\n\n      <ion-item>\n        <img src=\"../../../assets/icon/corrimento.png\">\n        <ion-label>Corrimento</ion-label>\n        <ion-select placeholder=\"Selecione\" [(ngModel)]=\"corrimento\" multiple=\"true\">\n          <ion-select-option value=\"transparente\">Transparente</ion-select-option>\n          <ion-select-option value=\"branco\">Branco</ion-select-option>\n          <ion-select-option value=\"amarelo\">Amarelo</ion-select-option>\n          <ion-select-option value=\"a-esverdeado\">Amarelo-esverdeado</ion-select-option>\n          <ion-select-option value=\"marrom\">Marrom</ion-select-option>\n          <ion-select-option value=\"sangue\">Com sangue</ion-select-option>\n          <ion-select-option value=\"rosado\">Rosado</ion-select-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item>\n        <img src=\"../../../assets/icon/coceira.png\">\n        <ion-label> Coceira</ion-label>\n        <ion-toggle></ion-toggle>\n      </ion-item>\n\n\n      <ion-list-header>\n        <ion-label>\n          <div>\n            <div style=\"float: left\">\n              <img src=\"../../../assets/icon/dor-relacao.png\">\n            </div>\n            <div class=\"text\">\n              <b>Dor na relação:</b>\n            </div>\n          </div>\n        </ion-label>\n      </ion-list-header>\n\n\n      <ion-item>\n        <ion-label>Sim</ion-label>\n        <ion-radio slot=\"start\" value=\"sim\" checked></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>As vezes</ion-label>\n        <ion-radio slot=\"start\" value=\"asvezes\"></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Não</ion-label>\n        <ion-radio slot=\"start\" value=\"nao\"></ion-radio>\n      </ion-item>\n\n\n    </ion-list>\n\n    <div class=\"rodape ion-text-center\">\n      <ion-button class=\"voltar\" href=\"opcoes\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\"><b>voltar</b>\n      </ion-button>\n      <ion-button class=\"menu\" href=\"opcoes\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\"><b>menu</b>\n      </ion-button>\n      <ion-button class=\"proximo\" href=\"/saude-vaginal-dois\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\">\n        <b>próximo</b>\n      </ion-button>\n    </div>\n\n    <ion-fab>\n      <ion-fab-button href=\"/saude-vaginal-dicas\">\n        <img src=\"../../../assets/icon/gyneco.png\" class=\"boneca\">\n      </ion-fab-button>\n    </ion-fab>\n\n  </div>\n</ion-content>"
+module.exports = "<ion-content>\n  <div class=\"backgroud ion-text-left\">\n    <div class=\"title ion-text-center\">Saúde vaginal</div>\n    <ion-list class=\"lista\">\n\n      <ion-list-header><b>Sente ou possui os sintomas:</b></ion-list-header>\n\n      <ion-radio-group allow-empty-selection=\"true\" [(ngModel)]=\"health.ardor\">\n        <ion-list-header>\n          <ion-label><img src=\"../../../assets/icon/heart.png\"><b>Ardor</b></ion-label>\n        </ion-list-header>\n        <div class=\"coluna1\">\n          <ion-item>\n            <img src=\"../../../assets/icon/nenhum.png\">\n            <ion-label>Nenhum</ion-label>\n            <ion-radio slot=\"start\" value=\"nenhum\"></ion-radio>\n          </ion-item>\n\n          <ion-item>\n            <img src=\"../../../assets/icon/baixo.png\">\n            <ion-label>Baixo</ion-label>\n            <ion-radio slot=\"start\" value=\"baixo\"></ion-radio>\n          </ion-item>\n        </div>\n        <div class=\"coluna2\">\n          <ion-item>\n            <img src=\"../../../assets/icon/medio.png\">\n            <ion-label>Médio</ion-label>\n            <ion-radio slot=\"start\" value=\"medio\"></ion-radio>\n          </ion-item>\n\n          <ion-item>\n            <img src=\"../../../assets/icon/intenso.png\">\n            <ion-label>Intenso</ion-label>\n            <ion-radio slot=\"start\" value=\"intenso\"></ion-radio>\n          </ion-item>\n        </div>\n      </ion-radio-group>\n\n\n      <ion-item>\n        <img src=\"../../../assets/icon/corrimento.png\">\n        <ion-label>Corrimento</ion-label>\n        <ion-select id=\"corrimento\" placeholder=\"Selecione\" [(ngModel)]=\"health.discharge\" multiple=\"true\">\n          <ion-select-option value=\"transparente\">Transparente </ion-select-option>\n          <ion-select-option value=\"branco\">Branco</ion-select-option>\n          <ion-select-option value=\"amarelo\">Amarelo</ion-select-option>\n          <ion-select-option value=\"amarelo esverdeado\">Amarelo-esverdeado</ion-select-option>\n          <ion-select-option value=\"marrom\">Marrom</ion-select-option>\n          <ion-select-option value=\"sangue\">Com sangue</ion-select-option>\n          <ion-select-option value=\"rosado\">Rosado</ion-select-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item>\n        <img src=\"../../../assets/icon/coceira.png\">\n        <ion-label> Coceira</ion-label>\n        <ion-toggle [(ngModel)]=\"health.itch\">\n        </ion-toggle>\n      </ion-item>\n\n      <ion-radio-group allow-empty-selection=\"true\" [(ngModel)]=\"health.painSex\"> \n        <ion-list-header>\n          <ion-label>\n            <div>\n              <div style=\"float: left\">\n                <img src=\"../../../assets/icon/dor-relacao.png\">\n              </div>\n              <div class=\"text\">\n                <b>Dor na relação:</b>\n              </div>\n            </div>\n          </ion-label>\n        </ion-list-header>\n\n        <ion-item>\n          <ion-label>Sim</ion-label>\n          <ion-radio slot=\"start\" value=\"sim\"></ion-radio>\n        </ion-item>\n\n        <ion-item>\n          <ion-label>As vezes</ion-label>\n          <ion-radio slot=\"start\" value=\"as vezes\"></ion-radio>\n        </ion-item>\n\n        <ion-item>\n          <ion-label>Não</ion-label>\n          <ion-radio slot=\"start\" value=\"nao\"></ion-radio>\n        </ion-item>\n      </ion-radio-group>\n\n    </ion-list>\n\n    <div class=\"rodape ion-text-center\">\n      <ion-button class=\"voltar\" (click)=\"back()\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\">\n        <b>voltar</b>\n      </ion-button>\n      <ion-button class=\"menu\" (click)=\"menu()\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\"><b>menu</b>\n      </ion-button>\n      <ion-button class=\"proximo\" (click)=\"next()\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\">\n        <b>próximo</b>\n      </ion-button>\n    </div>\n\n    <ion-fab>\n      <ion-fab-button (click)=\"tip()\">\n        <img src=\"../../../assets/icon/gyneco.png\" class=\"boneca\">\n      </ion-fab-button>\n    </ion-fab>\n\n  </div>\n</ion-content>"
 
 /***/ }),
 
@@ -97,7 +97,7 @@ SaudeVaginalPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".backgroud {\n  position: absolute;\n  --backgroud: #c8ffff;\n  padding: 0px;\n  background-image: url('saude.jpeg');\n  background-size: 100% 100%;\n  width: 100%;\n}\n\nion-list {\n  background-color: #b5f0f0;\n  margin-left: 20px;\n  margin-right: 20px;\n  margin-top: 110px;\n  border-radius: 25px;\n}\n\nion-radio {\n  --color-checked: #ff6c92;\n}\n\nion-item {\n  --background:#b5f0f0;\n  --border-radius: 10px;\n}\n\nimg {\n  height: 25px;\n}\n\nion-fab {\n  top: 125px;\n  margin-left: 75%;\n}\n\n.text {\n  width: 300px;\n  margin-left: 9%;\n}\n\nion-fab-button {\n  width: 85px;\n  height: 85px;\n}\n\n.boneca {\n  width: 100px;\n  height: 100px;\n}\n\n.rodape {\n  margin-top: 5px;\n  margin-bottom: 55px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2RhbmkvRG9jdW1lbnRzL2JvbHNhL2FwL0dpbmVjb0hlbHAvc3JjL2FwcC9wYWdlcy9zYXVkZS12YWdpbmFsL3NhdWRlLXZhZ2luYWwucGFnZS5zY3NzIiwic3JjL2FwcC9wYWdlcy9zYXVkZS12YWdpbmFsL3NhdWRlLXZhZ2luYWwucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxvQkFBQTtFQUNBLFlBQUE7RUFDQSxtQ0FBQTtFQUNBLDBCQUFBO0VBQ0EsV0FBQTtBQ0NKOztBREVBO0VBQ0kseUJBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsaUJBQUE7RUFDQSxtQkFBQTtBQ0NKOztBREVBO0VBQ0ksd0JBQUE7QUNDSjs7QURDQTtFQUNJLG9CQUFBO0VBQ0EscUJBQUE7QUNFSjs7QURBQTtFQUNJLFlBQUE7QUNHSjs7QURBQTtFQUNJLFVBQUE7RUFDQSxnQkFBQTtBQ0dKOztBRERBO0VBQ0ksWUFBQTtFQUNBLGVBQUE7QUNJSjs7QURGQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0FDS0o7O0FESEE7RUFDSSxZQUFBO0VBQ0EsYUFBQTtBQ01KOztBREpBO0VBQ0ksZUFBQTtFQUNBLG1CQUFBO0FDT0oiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9zYXVkZS12YWdpbmFsL3NhdWRlLXZhZ2luYWwucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJhY2tncm91ZCB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIC0tYmFja2dyb3VkOiAjYzhmZmZmOyBcbiAgICBwYWRkaW5nOiAwcHg7XG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKC4uLy4uLy4uL2Fzc2V0cy9pbWcvc2F1ZGUuanBlZyk7XG4gICAgYmFja2dyb3VuZC1zaXplOiAxMDAlIDEwMCU7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbmlvbi1saXN0e1xuICAgIGJhY2tncm91bmQtY29sb3I6I2I1ZjBmMDtcbiAgICBtYXJnaW4tbGVmdDogMjBweDtcbiAgICBtYXJnaW4tcmlnaHQ6IDIwcHg7XG4gICAgbWFyZ2luLXRvcDogMTEwcHg7XG4gICAgYm9yZGVyLXJhZGl1czogMjVweDtcbiAgICBcbn1cbmlvbi1yYWRpb3tcbiAgICAtLWNvbG9yLWNoZWNrZWQ6ICNmZjZjOTI7XG59XG5pb24taXRlbXtcbiAgICAtLWJhY2tncm91bmQ6I2I1ZjBmMDtcbiAgICAtLWJvcmRlci1yYWRpdXM6IDEwcHg7XG59XG5pbWd7XG4gICAgaGVpZ2h0OiAyNXB4O1xufVxuXG5pb24tZmFie1xuICAgIHRvcDogMTI1cHg7XG4gICAgbWFyZ2luLWxlZnQ6IDc1JTsgICAgXG59XG4udGV4dHtcbiAgICB3aWR0aDogMzAwcHg7XG4gICAgbWFyZ2luLWxlZnQ6IDklO1xufVxuaW9uLWZhYi1idXR0b257XG4gICAgd2lkdGg6IDg1cHg7XG4gICAgaGVpZ2h0OiA4NXB4O1xufVxuLmJvbmVjYXtcbiAgICB3aWR0aDogMTAwcHg7XG4gICAgaGVpZ2h0OiAxMDBweDtcbn1cbi5yb2RhcGV7XG4gICAgbWFyZ2luLXRvcDogNXB4O1xuICAgIG1hcmdpbi1ib3R0b206IDU1cHg7XG59XG4iLCIuYmFja2dyb3VkIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICAtLWJhY2tncm91ZDogI2M4ZmZmZjtcbiAgcGFkZGluZzogMHB4O1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoLi4vLi4vLi4vYXNzZXRzL2ltZy9zYXVkZS5qcGVnKTtcbiAgYmFja2dyb3VuZC1zaXplOiAxMDAlIDEwMCU7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG5pb24tbGlzdCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNiNWYwZjA7XG4gIG1hcmdpbi1sZWZ0OiAyMHB4O1xuICBtYXJnaW4tcmlnaHQ6IDIwcHg7XG4gIG1hcmdpbi10b3A6IDExMHB4O1xuICBib3JkZXItcmFkaXVzOiAyNXB4O1xufVxuXG5pb24tcmFkaW8ge1xuICAtLWNvbG9yLWNoZWNrZWQ6ICNmZjZjOTI7XG59XG5cbmlvbi1pdGVtIHtcbiAgLS1iYWNrZ3JvdW5kOiNiNWYwZjA7XG4gIC0tYm9yZGVyLXJhZGl1czogMTBweDtcbn1cblxuaW1nIHtcbiAgaGVpZ2h0OiAyNXB4O1xufVxuXG5pb24tZmFiIHtcbiAgdG9wOiAxMjVweDtcbiAgbWFyZ2luLWxlZnQ6IDc1JTtcbn1cblxuLnRleHQge1xuICB3aWR0aDogMzAwcHg7XG4gIG1hcmdpbi1sZWZ0OiA5JTtcbn1cblxuaW9uLWZhYi1idXR0b24ge1xuICB3aWR0aDogODVweDtcbiAgaGVpZ2h0OiA4NXB4O1xufVxuXG4uYm9uZWNhIHtcbiAgd2lkdGg6IDEwMHB4O1xuICBoZWlnaHQ6IDEwMHB4O1xufVxuXG4ucm9kYXBlIHtcbiAgbWFyZ2luLXRvcDogNXB4O1xuICBtYXJnaW4tYm90dG9tOiA1NXB4O1xufSJdfQ== */"
+module.exports = "@import url(\"https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap\");\n.backgroud {\n  position: absolute;\n  --backgroud: #c8ffff;\n  padding: 0px;\n  background-image: url('back.png');\n  background-size: 100% 100%;\n  width: 100%;\n  height: 100%;\n}\n.title {\n  position: relative;\n  top: 1%;\n  font-size: 38px;\n  font-family: \"Amatic SC\", cursive;\n  color: #6d4c80;\n}\nion-list {\n  position: relative;\n  background-color: #b5f0f0;\n  margin-left: 20px;\n  margin-right: 20px;\n  margin-top: 4%;\n  border-radius: 25px;\n}\nion-radio {\n  --color-checked: #ff6c92;\n  margin-left: 0px;\n  margin-right: 5%;\n}\nion-item {\n  --background:#b5f0f0;\n  --border-radius: 10px;\n}\nimg {\n  height: 25px;\n}\nion-fab {\n  top: 10%;\n  margin-left: 70%;\n}\n.coluna1 {\n  width: 50%;\n  margin-left: 1px;\n  float: left;\n}\n.coluna2 {\n  width: 50%;\n  margin-left: 50%;\n}\n.text {\n  width: 300px;\n  margin-left: 9%;\n}\nion-fab-button {\n  width: 80px;\n  height: 80px;\n}\n.boneca {\n  width: 70px;\n  height: 85px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2RhbmkvRG9jdW1lbnRzL2JvbHNhL2FwL0dpbmVjb0hlbHAvc3JjL2FwcC9wYWdlcy9zYXVkZS12YWdpbmFsL3NhdWRlLXZhZ2luYWwucGFnZS5zY3NzIiwic3JjL2FwcC9wYWdlcy9zYXVkZS12YWdpbmFsL3NhdWRlLXZhZ2luYWwucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFRLHVGQUFBO0FBQ1I7RUFDSSxrQkFBQTtFQUNBLG9CQUFBO0VBQ0EsWUFBQTtFQUNBLGlDQUFBO0VBQ0EsMEJBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtBQ0NKO0FEQ0E7RUFDSSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxlQUFBO0VBQ0EsaUNBQUE7RUFDQSxjQUFBO0FDRUo7QURBQTtFQUNJLGtCQUFBO0VBQ0EseUJBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLG1CQUFBO0FDR0o7QUREQTtFQUNJLHdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtBQ0lKO0FERkE7RUFDSSxvQkFBQTtFQUNBLHFCQUFBO0FDS0o7QURIQTtFQUNJLFlBQUE7QUNNSjtBREpBO0VBQ0ksUUFBQTtFQUNBLGdCQUFBO0FDT0o7QURMQTtFQUNJLFVBQUE7RUFDQSxnQkFBQTtFQUNBLFdBQUE7QUNRSjtBRE5BO0VBQ0ksVUFBQTtFQUNBLGdCQUFBO0FDU0o7QURQQTtFQUNJLFlBQUE7RUFDQSxlQUFBO0FDVUo7QURSQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0FDV0o7QURUQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0FDWUoiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9zYXVkZS12YWdpbmFsL3NhdWRlLXZhZ2luYWwucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9QW1hdGljK1NDOndnaHRANzAwJmRpc3BsYXk9c3dhcCcpO1xuLmJhY2tncm91ZCB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIC0tYmFja2dyb3VkOiAjYzhmZmZmOyBcbiAgICBwYWRkaW5nOiAwcHg7XG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKC4uLy4uLy4uL2Fzc2V0cy9pbWcvYmFjay5wbmcpO1xuICAgIGJhY2tncm91bmQtc2l6ZTogMTAwJSAxMDAlO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMTAwJTtcbn1cbi50aXRsZSB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIHRvcDogMSU7XG4gICAgZm9udC1zaXplOiAzOHB4O1xuICAgIGZvbnQtZmFtaWx5OiAnQW1hdGljIFNDJywgY3Vyc2l2ZTtcbiAgICBjb2xvcjogIzZkNGM4MDsgXG59XG5pb24tbGlzdHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgYmFja2dyb3VuZC1jb2xvcjojYjVmMGYwO1xuICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xuICAgIG1hcmdpbi1yaWdodDogMjBweDtcbiAgICBtYXJnaW4tdG9wOiA0JTtcbiAgICBib3JkZXItcmFkaXVzOiAyNXB4OyAgXG59XG5pb24tcmFkaW97XG4gICAgLS1jb2xvci1jaGVja2VkOiAjZmY2YzkyO1xuICAgIG1hcmdpbi1sZWZ0OiAwcHg7XG4gICAgbWFyZ2luLXJpZ2h0OiA1JTsgIFxufVxuaW9uLWl0ZW17XG4gICAgLS1iYWNrZ3JvdW5kOiNiNWYwZjA7XG4gICAgLS1ib3JkZXItcmFkaXVzOiAxMHB4O1xufVxuaW1ne1xuICAgIGhlaWdodDogMjVweDtcbn1cbmlvbi1mYWJ7XG4gICAgdG9wOiAxMCU7XG4gICAgbWFyZ2luLWxlZnQ6IDcwJTsgICAgXG59XG4uY29sdW5hMXtcbiAgICB3aWR0aDogNTAlO1xuICAgIG1hcmdpbi1sZWZ0OiAxcHg7XG4gICAgZmxvYXQ6IGxlZnQ7XG59XG4uY29sdW5hMntcbiAgICB3aWR0aDogNTAlO1xuICAgIG1hcmdpbi1sZWZ0OiA1MCU7ICAgIFxufVxuLnRleHR7XG4gICAgd2lkdGg6IDMwMHB4O1xuICAgIG1hcmdpbi1sZWZ0OiA5JTtcbn1cbmlvbi1mYWItYnV0dG9ue1xuICAgIHdpZHRoOiA4MHB4O1xuICAgIGhlaWdodDogODBweDtcbn1cbi5ib25lY2F7XG4gICAgd2lkdGg6IDcwcHg7XG4gICAgaGVpZ2h0OiA4NXB4O1xufVxuXG4iLCJAaW1wb3J0IHVybChcImh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9QW1hdGljK1NDOndnaHRANzAwJmRpc3BsYXk9c3dhcFwiKTtcbi5iYWNrZ3JvdWQge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIC0tYmFja2dyb3VkOiAjYzhmZmZmO1xuICBwYWRkaW5nOiAwcHg7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybCguLi8uLi8uLi9hc3NldHMvaW1nL2JhY2sucG5nKTtcbiAgYmFja2dyb3VuZC1zaXplOiAxMDAlIDEwMCU7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbi50aXRsZSB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdG9wOiAxJTtcbiAgZm9udC1zaXplOiAzOHB4O1xuICBmb250LWZhbWlseTogXCJBbWF0aWMgU0NcIiwgY3Vyc2l2ZTtcbiAgY29sb3I6ICM2ZDRjODA7XG59XG5cbmlvbi1saXN0IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjYjVmMGYwO1xuICBtYXJnaW4tbGVmdDogMjBweDtcbiAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xuICBtYXJnaW4tdG9wOiA0JTtcbiAgYm9yZGVyLXJhZGl1czogMjVweDtcbn1cblxuaW9uLXJhZGlvIHtcbiAgLS1jb2xvci1jaGVja2VkOiAjZmY2YzkyO1xuICBtYXJnaW4tbGVmdDogMHB4O1xuICBtYXJnaW4tcmlnaHQ6IDUlO1xufVxuXG5pb24taXRlbSB7XG4gIC0tYmFja2dyb3VuZDojYjVmMGYwO1xuICAtLWJvcmRlci1yYWRpdXM6IDEwcHg7XG59XG5cbmltZyB7XG4gIGhlaWdodDogMjVweDtcbn1cblxuaW9uLWZhYiB7XG4gIHRvcDogMTAlO1xuICBtYXJnaW4tbGVmdDogNzAlO1xufVxuXG4uY29sdW5hMSB7XG4gIHdpZHRoOiA1MCU7XG4gIG1hcmdpbi1sZWZ0OiAxcHg7XG4gIGZsb2F0OiBsZWZ0O1xufVxuXG4uY29sdW5hMiB7XG4gIHdpZHRoOiA1MCU7XG4gIG1hcmdpbi1sZWZ0OiA1MCU7XG59XG5cbi50ZXh0IHtcbiAgd2lkdGg6IDMwMHB4O1xuICBtYXJnaW4tbGVmdDogOSU7XG59XG5cbmlvbi1mYWItYnV0dG9uIHtcbiAgd2lkdGg6IDgwcHg7XG4gIGhlaWdodDogODBweDtcbn1cblxuLmJvbmVjYSB7XG4gIHdpZHRoOiA3MHB4O1xuICBoZWlnaHQ6IDg1cHg7XG59Il19 */"
 
 /***/ }),
 
@@ -114,34 +114,141 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var src_app_services_health_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/health.service */ "./src/app/services/health.service.ts");
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+
+
+
+
 
 
 
 let SaudeVaginalPage = class SaudeVaginalPage {
-    constructor(platform) {
-        this.platform = platform;
-        this.corrimento = [];
-        this.ardor = [];
-        this.platform.ready().then(() => {
-            this.ardor = [{ id: 1, name: "Nenhum" },
-                { id: 2, name: "Baixo" },
-                { id: 3, name: "Médio" },
-                { id: 4, name: "Intenso" }];
-        });
+    constructor(healthService, loadingCtrl, toastCtrl, authService, activeRoute, router) {
+        this.healthService = healthService;
+        this.loadingCtrl = loadingCtrl;
+        this.toastCtrl = toastCtrl;
+        this.authService = authService;
+        this.activeRoute = activeRoute;
+        this.router = router;
+        this.health = {};
+        this.healthID = null;
     }
     ngOnInit() {
+        this.formattingDay();
+        this.check();
+    }
+    formattingDay() {
+        var format = new Date();
+        var day;
+        var month;
+        var year = format.getFullYear();
+        var aux;
+        if (format.getDate() < 10) {
+            day = "0" + format.getDate();
+        }
+        else {
+            day = format.getDate();
+        }
+        if (format.getMonth() + 1 < 10) {
+            aux = format.getMonth() + 1;
+            month = "0" + aux;
+        }
+        else {
+            month = format.getMonth() + 1;
+        }
+        this.today = day + "-" + month + "-" + year;
+    }
+    check() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            if ((yield this.healthService.checkExists(this.today)) == true) {
+                this.loadHealth();
+            }
+        });
+    }
+    loadHealth() {
+        this.healthSubscription = this.healthService.getHealth(this.today).subscribe(data => {
+            this.health = data;
+        });
+    }
+    back() {
+        this.saveHealth();
+        return this.router.navigate(["/opcoes"]);
+    }
+    menu() {
+        this.saveHealth();
+        return this.router.navigate(["/opcoes"]);
+    }
+    next() {
+        this.saveHealth();
+        return this.router.navigate(["/saude-vaginal-dois"]);
+    }
+    tip() {
+        this.saveHealth();
+        return this.router.navigate(["/saude-vaginal-dicas"]);
+    }
+    saveHealth() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            yield this.presentLoading();
+            this.health.userID = this.authService.getAuth().currentUser.uid;
+            if (this.healthID) {
+            }
+            else {
+                this.health.data = this.today;
+                if (this.health.ardor == null) {
+                    this.health.ardor = "indefinido";
+                }
+                if (this.health.painSex == null) {
+                    this.health.painSex = "indefinido";
+                }
+                try {
+                    yield this.healthService.addHealth(this.health);
+                    yield this.loading.dismiss();
+                }
+                catch (error) {
+                    console.log(error);
+                    this.presentToast("Erro ao tentar salvar");
+                    this.loading.dismiss();
+                }
+            }
+        });
+    }
+    presentLoading() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.loading = yield this.loadingCtrl.create({
+                message: "Por favor, aguarde...",
+            });
+            return this.loading.present();
+        });
+    }
+    presentToast(message) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const toast = yield this.toastCtrl.create({ message, duration: 2000 });
+            toast.present();
+        });
     }
 };
 SaudeVaginalPage.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["Platform"] }
+    { type: src_app_services_health_service__WEBPACK_IMPORTED_MODULE_4__["HealthService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["LoadingController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["ToastController"] },
+    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
 SaudeVaginalPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
-        selector: 'app-saude-vaginal',
+        selector: "app-saude-vaginal",
         template: __webpack_require__(/*! raw-loader!./saude-vaginal.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/saude-vaginal/saude-vaginal.page.html"),
         styles: [__webpack_require__(/*! ./saude-vaginal.page.scss */ "./src/app/pages/saude-vaginal/saude-vaginal.page.scss")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["Platform"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_health_service__WEBPACK_IMPORTED_MODULE_4__["HealthService"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["LoadingController"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["ToastController"],
+        src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
 ], SaudeVaginalPage);
 
 
