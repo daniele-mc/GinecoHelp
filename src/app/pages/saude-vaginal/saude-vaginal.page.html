@@ -3,6 +3,12 @@
     <div class="title ion-text-center">Saúde vaginal</div>
     <ion-list class="lista">
 
+      <ion-fab class="tip">
+        <ion-fab-button (click)="tip()">
+          <img src="../../../assets/icon/gyneco.png" class="boneca">
+        </ion-fab-button>
+      </ion-fab>
+      
       <ion-list-header><b>Sente ou possui os sintomas:</b></ion-list-header>
 
       <ion-radio-group allow-empty-selection="true" [(ngModel)]="health.ardor">
@@ -101,12 +107,6 @@
         <b>próximo</b>
       </ion-button>
     </div>
-
-    <ion-fab>
-      <ion-fab-button (click)="tip()">
-        <img src="../../../assets/icon/gyneco.png" class="boneca">
-      </ion-fab-button>
-    </ion-fab>
 
   </div>
 </ion-content>

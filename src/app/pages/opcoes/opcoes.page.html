@@ -1,27 +1,38 @@
 <ion-content>
-    <div class="backgroud">
-        <div class="bia ion-text-center">Olá, sou Bia sua amiga<br> virtual, e estou<br>aqui para te ajudar</div>
+    <div class="backgroud"> 
+
+        <div class="topo">
+            
+        
+            <div class="imagemBoneca">
+                <img src="../../../assets/icon/gyneco.png" class="boneca">
+            </div>
+
+            <div class="bia ion-text-center">Olá, sou Bia sua amiga<br> virtual, e estou<br>aqui para te ajudar</div>
+        </div>
+        
+
         <div class="title ion-text-center">Clique no que você quer saber</div>
+        
         <div class="subtitle ion-text-center">Eu quero:</div>
 
         <div class="container ion-button-center">
-            <ion-button href="/saude-vaginal" expand="full" fill="outline">Saúde ginecológica <br>(vaginal e higiene
+            <ion-button (click)="saudeVaginal()" expand="full" fill="outline">Saúde ginecológica <br>(vaginal e higiene
                 íntima)</ion-button>
-            <ion-button href="/ciclo-menstrual" expand="full" fill="outline">Ciclo menstrual</ion-button>
-            <ion-button href="/metodo-contraceptivo" expand="full" fill="outline">Métodos contraceptivos</ion-button>
-            <ion-button href="/sexo" expand="full" fill="outline">Sexo e infecções<br>sexualmente transmissíveis
+            <ion-button (click)="cicloMenstrual()" expand="full" fill="outline">Ciclo menstrual</ion-button>
+            <ion-button (click)="metodoContraceptivo()" expand="full" fill="outline">Métodos contraceptivos</ion-button>
+            <ion-button (click)="sexo()" expand="full" fill="outline">Sexo e infecções<br>sexualmente transmissíveis
             </ion-button>
-            <ion-button href="/servicos-saude" expand="full" fill="outline">Serviços de urgência ginecológica
+            <ion-button (click)="servicosSaude()" expand="full" fill="outline">Serviços de urgência ginecológica
             </ion-button>
         </div>
+
         <div class="rodape ion-text-center">
             <ion-button style="font-family: Verdana, Geneva, Tahoma, sans-serif" (click)="logout()">
                 <b>logout</b>
             </ion-button>
-        </div>
-        <div>
-            <img src="../../../assets/icon/gyneco.png" class="boneca">
-        </div>
+        </div>    
+
     </div>
 
 </ion-content>

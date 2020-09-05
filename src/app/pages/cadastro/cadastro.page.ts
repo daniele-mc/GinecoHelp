@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides, LoadingController, ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -18,6 +19,7 @@ export class CadastroPage implements OnInit {
     private toastCtrl: ToastController,
     private authService: AuthService,
     private afs: AngularFirestore,
+    private router: Router
   ) {
   }
   ngOnInit() { }
@@ -60,6 +62,10 @@ export class CadastroPage implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastCtrl.create({ message, duration: 2000 });
     toast.present();
+  }
+
+  back() {
+    return this.router.navigate(["/objetivos"]);
   }
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-saude-vaginal-dois-dicas',
   templateUrl: './saude-vaginal-dois-dicas.page.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaudeVaginalDoisDicasPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  voltar() {
+    return this.router.navigate(["/saude-vaginal-dois"]);
+  }
 }

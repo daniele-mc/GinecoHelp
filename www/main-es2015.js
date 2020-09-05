@@ -790,6 +790,10 @@ const routes = [
     { path: 'gravidez', loadChildren: () => __webpack_require__.e(/*! import() | pages-gravidez-gravidez-module */ "pages-gravidez-gravidez-module").then(__webpack_require__.bind(null, /*! ./pages/gravidez/gravidez.module */ "./src/app/pages/gravidez/gravidez.module.ts")).then(m => m.GravidezPageModule), canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]] },
     { path: 'desejo-sexual', loadChildren: () => __webpack_require__.e(/*! import() | pages-desejo-sexual-desejo-sexual-module */ "pages-desejo-sexual-desejo-sexual-module").then(__webpack_require__.bind(null, /*! ./pages/desejo-sexual/desejo-sexual.module */ "./src/app/pages/desejo-sexual/desejo-sexual.module.ts")).then(m => m.DesejoSexualPageModule), canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]] },
     { path: 'servicos-saude', loadChildren: () => __webpack_require__.e(/*! import() | pages-servicos-saude-servicos-saude-module */ "pages-servicos-saude-servicos-saude-module").then(__webpack_require__.bind(null, /*! ./pages/servicos-saude/servicos-saude.module */ "./src/app/pages/servicos-saude/servicos-saude.module.ts")).then(m => m.ServicosSaudePageModule), canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]] },
+    {
+        path: 'redefinir-senha',
+        loadChildren: () => __webpack_require__.e(/*! import() | pages-redefinir-senha-redefinir-senha-module */ "pages-redefinir-senha-redefinir-senha-module").then(__webpack_require__.bind(null, /*! ./pages/redefinir-senha/redefinir-senha.module */ "./src/app/pages/redefinir-senha/redefinir-senha.module.ts")).then(m => m.RedefinirSenhaPageModule)
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -906,6 +910,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
 /* harmony import */ var ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ngx-bootstrap/datepicker */ "./node_modules/ngx-bootstrap/datepicker/fesm2015/ngx-bootstrap-datepicker.js");
 /* harmony import */ var _logisticinfotech_ionic4_datepicker__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @logisticinfotech/ionic4-datepicker */ "./node_modules/@logisticinfotech/ionic4-datepicker/fesm2015/logisticinfotech-ionic4-datepicker.js");
+/* harmony import */ var ionic2_calendar__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ionic2-calendar */ "./node_modules/ionic2-calendar/index.js");
+
 
 
 
@@ -937,7 +943,7 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]],
-        entryComponents: [],
+        entryComponents: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]],
         imports: [
             _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
             _mobiscroll_angular__WEBPACK_IMPORTED_MODULE_2__["MbscModule"],
@@ -954,6 +960,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_20__["BrowserAnimationsModule"],
             ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_21__["BsDatepickerModule"].forRoot(),
             _logisticinfotech_ionic4_datepicker__WEBPACK_IMPORTED_MODULE_22__["Ionic4DatepickerModule"],
+            ionic2_calendar__WEBPACK_IMPORTED_MODULE_23__["NgCalendarModule"],
         ],
         providers: [
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_8__["StatusBar"],
@@ -1082,12 +1089,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/es2015/index.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
 let AuthService = class AuthService {
     constructor(afa) {
         this.afa = afa;
+    }
+    FacebookAuth() {
+        return this.AuthLogin(new firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"].FacebookAuthProvider());
+    }
+    AuthLogin(provider) {
+        return this.afa.auth.signInWithPopup(provider)
+            .then((result) => {
+            console.log('You have been successfully logged in!');
+        }).catch((error) => {
+            console.log(error);
+        });
     }
     login(user) {
         return this.afa.auth.signInWithEmailAndPassword(user.email, user.password);
@@ -1100,6 +1121,10 @@ let AuthService = class AuthService {
     }
     getAuth() {
         return this.afa.auth;
+    }
+    resetPassword(email) {
+        return this.afa.auth.sendPasswordResetEmail(email).then(() => console.log("Email enviado"))
+            .catch((error) => console.log(error));
     }
 };
 AuthService.ctorParameters = () => [

@@ -7,21 +7,28 @@
     background-size: 100% 100%;
     width: 100%;
     height: 100%;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
 }
 .title {
     position: relative;
-    top: 1%;
     font-size: 38px;
     font-family: 'Amatic SC', cursive;
-    color: #6d4c80; 
+    color: #6d4c80;
+    text-align: center;
+    margin-top: 10%;
 }
 ion-list{
     position: relative;
     background-color:#b5f0f0;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 4%;
-    border-radius: 25px;  
+    margin-top: 5%;
+    border-radius: 25px;
+    //justify-content: space-around;
+    //height: 60%;
+    align-items: center;
 }
 ion-radio{
     --color-checked: #ff6c92;
@@ -36,7 +43,7 @@ img{
     height: 25px;
 }
 ion-fab{
-    top: 10%;
+    margin-top: 10%;
     margin-left: 70%;    
 }
 .coluna1{
@@ -59,5 +66,10 @@ ion-fab-button{
 .boneca{
     width: 70px;
     height: 85px;
+}
+.tip{
+    position: absolute;
+    margin-top: 1%;
+    margin-right: 5%;
 }
 

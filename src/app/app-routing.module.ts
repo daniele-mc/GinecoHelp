@@ -30,6 +30,10 @@ const routes: Routes = [
   { path: 'gravidez', loadChildren: () => import('./pages/gravidez/gravidez.module').then(m => m.GravidezPageModule), canActivate: [AuthGuard] },
   { path: 'desejo-sexual', loadChildren: () => import('./pages/desejo-sexual/desejo-sexual.module').then(m => m.DesejoSexualPageModule), canActivate: [AuthGuard] },
   { path: 'servicos-saude', loadChildren: () => import('./pages/servicos-saude/servicos-saude.module').then(m => m.ServicosSaudePageModule), canActivate: [AuthGuard] },
+  {
+    path: 'redefinir-senha',
+    loadChildren: () => import('./pages/redefinir-senha/redefinir-senha.module').then( m => m.RedefinirSenhaPageModule)
+  },
 
 
 ];

@@ -19,16 +19,15 @@ import { IonicStorageModule } from "@ionic/storage";
 import { CalendarModule } from 'ion2-calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
-import { Ionic4DatepickerModule } from
-    '@logisticinfotech/ionic4-datepicker';
-
+import { Ionic4DatepickerModule } from '@logisticinfotech/ionic4-datepicker';
+import { NgCalendarModule  } from 'ionic2-calendar';
+import { Facebook } from '@ionic-native/facebook';
 export function createTranslateLoader(http: HttpClient){
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
+  entryComponents: [AppComponent],
   imports: [ 
     FormsModule,  
     MbscModule, 
@@ -45,6 +44,7 @@ export function createTranslateLoader(http: HttpClient){
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     Ionic4DatepickerModule,
+    NgCalendarModule,
     
   ],
   providers: [

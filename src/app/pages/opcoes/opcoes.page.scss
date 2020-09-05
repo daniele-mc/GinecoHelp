@@ -4,30 +4,47 @@
     width: 100%;
     height: 100%;
     background: url(../../../assets/img/opcoes.jpg);
-    background-repeat: no-repeat;
+    background-repeat:round;
     background-size: 100%;
     background-color: #ff6c92;
     width: 100%;
     height: 100%;
+    flex-direction: column;
+   
 }
 
-.container{
-    position: absolute;
-    bottom: 15%;
-    width: 100%;
+.topo {
+    display: flex;
+    flex: arrow;
+    align-items: center;
+}
+
+.imagemBoneca {
+    margin-top: 20%;
+    margin-left: 6%;
 }
 
 .bia {
-    position: relative;
-    top: 5%;
+    //position: relative;
+    //margin-top: 2%;
+    //top: 5%;
     font-size: 25px;
     font-family: 'Amatic SC', cursive;
     color: #6d4c80; 
-    margin-left: 38%;
+    margin-left: 10%;
+    margin-bottom: 19%;
+}
+
+.boneca{
+    //position: absolute;
+    //top: 5%;
+    //margin-left: 6%;
+    width: 120px;
+    height: 150px;
 }
 
 .title {
-    position: relative;
+    //position: relative;
     top: 15%;
     font-size: 39px;
     font-family: 'Amatic SC', cursive;
@@ -35,27 +52,26 @@
 }
 
 .subtitle {
-    position: relative;
+    //position: relative;
     top: 15%;
     font-size: 38px;
     font-family: 'Amatic SC', cursive;
     color: #6d4c80; 
 }
 
-.boneca{
-    position: absolute;
-    top: 5%;
-    margin-left: 6%;
-    width: 120px;
-    height: 150px;
+.container{
+    //margin-top: 30%;
+    //position: absolute;
+    width: 100%;
 }
+
 
 ion-button .container{
     color: #6d4b80;
 }
 
 .rodape{
-    position: absolute;
+    //position: absolute;
     width: 100vw;
     top: 84.5%;
     display: flex;

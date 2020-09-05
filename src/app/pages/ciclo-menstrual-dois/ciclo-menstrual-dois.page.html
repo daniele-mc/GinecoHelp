@@ -1,10 +1,19 @@
 <ion-content>
   <div class="backgroud ion-text-center">
     <div class="title ion-text-center">Ciclo menstrual</div>
- 
-    <ion-calendar [(ngModel)]="dateRange" [options]="optionsRange" [type]="type" [format]="'YYYY-MM-DD'" [readonly]="false" (click)="teste()">
-    </ion-calendar>
+    <div class="ion-margin">
+      <ion-title>Setembro</ion-title>
+      <calendar
+      [monthviewDisplayEventTemplate]="template"
+      [eventSource]="eventSource" 
+      [currentDate]="calendar.currentDate" 
+      step="30"
+      >
+      </calendar>
 
+    </div>
+    <ion-button color="primary" (click)="load()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <b>ver</b></ion-button>
     <ion-button color="primary" (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
       <b>voltar</b>
     </ion-button>

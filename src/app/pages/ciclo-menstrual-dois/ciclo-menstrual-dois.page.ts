@@ -16,7 +16,7 @@ import { ActivatedRoute } from "@angular/router";
 import { DatePipe } from '@angular/common';
 import { resolve } from 'url';
 import { moment } from 'ngx-bootstrap/chronos/test/chain';
-
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-ciclo-menstrual-dois',
@@ -24,6 +24,8 @@ import { moment } from 'ngx-bootstrap/chronos/test/chain';
   styleUrls: ['./ciclo-menstrual-dois.page.scss'],
 })
 export class CicloMenstrualDoisPage implements OnInit {
+
+  public healthCollection: AngularFirestoreCollection<Health>;
   private today;
   private health: Health = {};
   private loading: any;
@@ -38,19 +40,8 @@ export class CicloMenstrualDoisPage implements OnInit {
   private endM: number;
   private endY: number;
 
-
-  dateRange: {
-    from: Date;
-    to: Date
-  };
-  type: 'string';
-  optionsRange: CalendarComponentOptions = {
-    pickMode: 'range',
-    from: new Date(1),
-    color: 'danger',
- 
-  };
-
+  viewTitle: string
+  
   constructor(
     private healthService: HealthService,
     private loadingCtrl: LoadingController,
@@ -59,31 +50,50 @@ export class CicloMenstrualDoisPage implements OnInit {
     private activeRoute: ActivatedRoute,
     private router: Router,
     public modalCtrl: ModalController,
+    private db: AngularFirestore,
 
-  ) { 
-    
+  ) {  }
+
+  eventSource;
+
+  calendar = { 
+    mode: 'month', 
+    currentDate: ''
   }
-  
+  selectedDate = new Date();
 
-  ionViewWillEnter() {
-    
-    this.formattingDay();
-    this.loadHealth();
+ 
+  async load(){
+    this.eventSource = this.createEvents();
+  }
+
+  createEvents() {
+    var events = [];
+    var startTime = new Date(this.startY, this.startM, this.startD);
+    var endTime = new Date(this.endY, this.endM, this.endD);
+    events.push({
+        title: 'Menstruação',
+        startTime: startTime,
+        endTime: endTime,
+        allDay: false,
+        eventColor: 'red'
+    });
+       
+    return events;
+  }
    
-    console.log("aquiiiii",this.startY, this.startM, this.startD);
-  }
 
-  ngOnInit() {
-    console.log("init", new Date(this.startY, this.startM, this.startD));
-      
-    //this.dateRange.from = new Date(this.startY, this.startM, this.startD);
-    //this.dateRange.to = new Date(this.endY, this.endM, this.endY);
-    //this.dateRange.from = new Date(2020, 8, 1);
-    //this.dateRange.to = new Date(2020, 8, 3);
+  async ngOnInit() {
+    
+    await this.formattingDay();
+    await this.check();
+    await this.loadHealth();
+
+    setTimeout(this.load, 1000);    
     
   }
 
-  formattingDay() {
+  async formattingDay() {
     var format = new Date();
     var day;
     var month;
@@ -102,20 +112,20 @@ export class CicloMenstrualDoisPage implements OnInit {
       month = format.getMonth()+1;
     }
     this.today = day + "-" + month + "-" + year;
-    console.log("set data hoje");
+
   }
 
-/*
   async check() {
     if ((await this.healthService.checkExists(this.today)) == true) {
       await this.loadHealth();
       
     }
     console.log("check");
-  }*/
+  }
 
-  async loadHealth() {   
-    this.healthSubscription = await this.healthService.getHealth(this.today).subscribe(data => {
+  async loadHealth() {
+    
+    await (this.healthSubscription = await this.healthService.getHealth(this.today).subscribe(data => {
       this.health = data;
       this.startD = data.startDay;
       this.startM = data.startMonth;
@@ -123,11 +133,10 @@ export class CicloMenstrualDoisPage implements OnInit {
       this.endD = data.endDay;
       this.endM = data.endMonth;
       this.endY = data.endYear;
-      
+        
       console.log("data: ",this.startY, this.startM, this.startD);   
-      
-    });
-
+        
+      }));
   }
 
   back() {
@@ -176,4 +185,3 @@ export class CicloMenstrualDoisPage implements OnInit {
   }
 
 }
-

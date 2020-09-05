@@ -1,7 +1,7 @@
 <ion-content>
   <div class="backgroud">
-    <ion-button href="/objetivos" color="dark" class="button">
-      <img src="../../../assets/icon/voltar.png">
+    <ion-button (click)="back()" color="dark" class="button">
+      <img src="../../../assets/icon/back2.svg">
     </ion-button>
     <ion-slides>
       <ion-slide>
@@ -15,13 +15,13 @@
           <ion-item class="ion-margin-top" lines="none">
             <ion-input type="password" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
           </ion-item>
-          <a>
+          <a (click)="mudarSenha()">
             <p>Esqueceu a senha?</p>
           </a>
           <ion-button fill="outline" class="ion-margin-top" (click)="login()" color="primary" expand="block">
             Continuar
           </ion-button>
-          <ion-button fill="outline" href="/opcoes" class="ion-margin-top" (click)="login()" color="primary"
+          <ion-button fill="outline" class="ion-margin-top" (click)="loginFacebook()" color="primary"
             expand="block">
             Login com Facebook
           </ion-button>

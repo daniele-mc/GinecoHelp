@@ -1,0 +1,25 @@
+<ion-content>
+  <div class="backgroud">
+    <ion-button (click)="back()" color="dark" class="button">
+      <img src="../../../assets/icon/back2.svg">
+    </ion-button>
+    <ion-slides>
+      <ion-slide>
+        <div class="slide-inner ion-padding">
+          <span>Redefinir senha</span>
+
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-input type="email" placeholder="E-mail" [(ngModel)]="email"></ion-input>
+          </ion-item>
+
+          <ion-button fill="outline" class="ion-margin-top" (click)="sendChangePassword()" color="primary" expand="block">
+            Continuar
+          </ion-button>
+
+        </div>
+      </ion-slide>
+    </ion-slides>
+
+  </div>
+
+</ion-content>
