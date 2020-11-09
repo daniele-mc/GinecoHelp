@@ -53,7 +53,7 @@ export class HigieneTresPage implements OnInit {
     this.saveHealth();
     const alert = await this.AlertController.create({
       header: 'Usa sabonete para lavar a vagina?',
-      message: 'De acordo com as ginecologistas, o melhor sabonete é aquele com ph neutro, sem cor e sem cheiro que não altera a autorregulação das bactérias presentes no canal vaginal e na vulva.',
+      message: 'Estudos evidenciam que o melhor sabonete é aquele com Ph neutro ou ligeiramente ácido, sem cor e sem cheiro que não altera a autorregulação das bactérias presentes no canal vaginal e na vulva.',
       buttons: ['Ok']
     });
 

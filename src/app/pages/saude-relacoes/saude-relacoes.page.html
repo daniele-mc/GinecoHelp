@@ -4,7 +4,7 @@
     <ion-list>
 
       <br>
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="questions.unprotectedSexTransmittedInfection">
         <ion-list-header>
           <ion-label><img src="../../../assets/icon/infeccao.png">
             <b>Fazer sexo oral e/ou anal sem proteção pode pegar uma infecção sexualmente transmissível?
@@ -21,16 +21,18 @@
           <ion-label>Não</ion-label>
           <ion-radio slot="start" value="nao"></ion-radio>
         </ion-item>
+      </ion-radio-group>
 
-        <ion-item>
+      <ion-radio-group>
+        <ion-list-header>
           <ion-label><b>Se sim, qual(is):</b>
-            <ion-input></ion-input>
+            <ion-input [(ngModel)]="questions.desireUnprotectedSexInfection"></ion-input>
           </ion-label>
-        </ion-item>
+        </ion-list-header>
       </ion-radio-group>
       <br>
 
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="questions.withouthCondomTransmittedInfection">
         <ion-list-header>
           <ion-label><img src="../../../assets/icon/pergunta.png"><b>Fazer sexo sem camisinha pode levar a ter infecções sexualmente transmissíveis?
 
@@ -55,11 +57,11 @@
       </ion-radio-group>
     </ion-list>
     <div class="rodape ion-text-center">
-      <ion-button color="primary" href="/sexo" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button color="primary" (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>voltar</b></ion-button>
-      <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button color="primary" (click)="menu()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>menu</b></ion-button>
-      <ion-button color="primary" href="/desejo-sexual" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button color="primary" (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>próximo</b></ion-button>
 
     </div>

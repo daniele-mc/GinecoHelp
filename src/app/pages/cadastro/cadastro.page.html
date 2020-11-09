@@ -5,36 +5,37 @@
       <img src="../../../assets/icon/back2.svg">
     </ion-button>
     
-    <ion-icon name="arrow-back-outline"></ion-icon>
-
-    
     <ion-slides>
       <ion-slide>
+        
         <div class="slide-inner ion-padding">
-          <span>Cadastro</span>
+  
+              <span>Cadastro</span>
 
-          <ion-item class="ion-margin-top" lines="none">
-            <ion-input type="text" placeholder="nome" [(ngModel)]="user.name"></ion-input>
-          </ion-item>
+              <ion-item class="ion-margin-top" lines="none">
+                <ion-input type="text" placeholder="nome" [(ngModel)]="user.name"></ion-input>
+              </ion-item>
+            
 
-          <ion-item class="ion-margin-top" lines="none">
-            <ion-input type="date" placeholder="" [(ngModel)]="user.birthDate"></ion-input>
-          </ion-item>
+              <ion-item class="ion-margin-top" lines="none">
+                <ion-input type="date" placeholder="data de nascimento" [(ngModel)]="user.birthDate"></ion-input>
+              </ion-item>
 
-          <ion-item class="ion-margin-top" lines="none">
-            <ion-input type="email" placeholder="e-mail" [(ngModel)]="user.email"></ion-input>
-          </ion-item>
+              <ion-item class="ion-margin-top" lines="none">
+                <ion-input type="email" placeholder="e-mail" [(ngModel)]="user.email"></ion-input>
+              </ion-item>
 
-          <ion-item class="ion-margin-top" lines="none">
-            <ion-input type="password" placeholder="senha" [(ngModel)]="user.password"></ion-input>
-          </ion-item>
+              <ion-item class="ion-margin-top" lines="none">
+                <ion-input type="password" placeholder="senha" [(ngModel)]="user.password"></ion-input>
+              </ion-item>
 
-          <ion-button fill="outline" class="ion-margin-top" (click)="register()" color="primary" expand="block">
-            Criar conta
-          </ion-button><br>
-          <a><span>Termos de uso, politicas de privacidade</span></a>
+              <ion-button fill="outline" class="ion-margin-top" (click)="register()" color="primary" expand="block">
+                Criar conta
+              </ion-button><br>
+              <a><span>Termos de uso, politicas de privacidade</span></a>
+            
         </div>
-
+      
       </ion-slide>
     </ion-slides>
 

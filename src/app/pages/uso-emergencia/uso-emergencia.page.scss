@@ -10,10 +10,11 @@
 }
 .title {
     position: relative;
-    top: 3%;
     font-size: 38px;
     font-family: 'Amatic SC', cursive;
-    color: #6d4c80; 
+    color: #6d4c80;
+    text-align: center;
+    margin-top: 10%;
 }
 ion-list{
     position: relative;
@@ -53,7 +54,7 @@ ion-fab{
     margin-left: 50%;    
 }
 .pilula-dia-seguinte{
-    top: 48%;
+    top: 43%;
     position: absolute;
     right: 8%;
     height: 80px;

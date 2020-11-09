@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-content>\n  <div class=\"backgroud\">\n    \n    <ion-button (click)=\"back()\" color=\"dark\" class=\"button\">\n      <img src=\"../../../assets/icon/back2.svg\">\n    </ion-button>\n    \n    <ion-icon name=\"arrow-back-outline\"></ion-icon>\n\n    \n    <ion-slides>\n      <ion-slide>\n        <div class=\"slide-inner ion-padding\">\n          <span>Cadastro</span>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"text\" placeholder=\"nome\" [(ngModel)]=\"user.name\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"date\" placeholder=\"\" [(ngModel)]=\"user.birthDate\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"email\" placeholder=\"e-mail\" [(ngModel)]=\"user.email\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"password\" placeholder=\"senha\" [(ngModel)]=\"user.password\"></ion-input>\n          </ion-item>\n\n          <ion-button fill=\"outline\" class=\"ion-margin-top\" (click)=\"register()\" color=\"primary\" expand=\"block\">\n            Criar conta\n          </ion-button><br>\n          <a><span>Termos de uso, politicas de privacidade</span></a>\n        </div>\n\n      </ion-slide>\n    </ion-slides>\n\n  </div>\n</ion-content>"
+module.exports = "<ion-content>\n  <div class=\"backgroud\">\n    \n    <ion-button (click)=\"back()\" color=\"dark\" class=\"button\">\n      <img src=\"../../../assets/icon/back2.svg\">\n    </ion-button>\n    \n    <ion-icon name=\"arrow-back-outline\"></ion-icon>\n\n    \n    <ion-slides>\n      <ion-slide>\n        <div class=\"slide-inner ion-padding\">\n          <span>Cadastro</span>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"text\" placeholder=\"nome\" [(ngModel)]=\"user.name\"></ion-input>\n          </ion-item>\n         \n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"date\" placeholder=\"data de nascimento\" [(ngModel)]=\"user.birthDate\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"email\" placeholder=\"e-mail\" [(ngModel)]=\"user.email\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"password\" placeholder=\"senha\" [(ngModel)]=\"user.password\"></ion-input>\n          </ion-item>\n\n          <ion-button fill=\"outline\" class=\"ion-margin-top\" (click)=\"register()\" color=\"primary\" expand=\"block\">\n            Criar conta\n          </ion-button><br>\n          <a><span>Termos de uso, politicas de privacidade</span></a>\n        </div>\n\n      </ion-slide>\n    </ion-slides>\n\n  </div>\n</ion-content>"
 
 /***/ }),
 
@@ -137,10 +137,24 @@ let CadastroPage = class CadastroPage {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             yield this.presentLoading();
             try {
-                const newUser = yield this.authService.register(this.user);
+                if (this.user.name == null) {
+                    console.log("nome: ", this.user.name);
+                }
+                else if (this.user.birthDate == null) {
+                    console.log("aniversario:", this.user.birthDate);
+                }
+                else {
+                    const newUser = yield this.authService.register(this.user);
+                    const newUserObject = Object.assign({}, this.user);
+                    delete newUserObject.password;
+                    yield this.afs.collection('Users').doc(newUser.user.uid).set(newUserObject);
+                }
+                /*
+                const newUser = await this.authService.register(this.user);
                 const newUserObject = Object.assign({}, this.user);
                 delete newUserObject.password;
-                yield this.afs.collection('Users').doc(newUser.user.uid).set(newUserObject);
+                await this.afs.collection('Users').doc(newUser.user.uid).set(newUserObject);
+                */
             }
             catch (error) {
                 console.error(error);

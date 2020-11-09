@@ -39,7 +39,7 @@ export class HigieneDoisPage implements OnInit {
     this.saveHealth();
     const alert = await this.AlertController.create({
       header: 'Dorme com calcinha?',
-      message: 'O principal benefício de dispensar a calcinha na hora de dormir é arejar a região genital minimizando o surgimento de infecções vaginais.',
+      message: 'Um benefício de dispensar a calcinha na hora de dormir é arejar a região genital minimizando o surgimento de infecções vaginais.',
       buttons: ['Ok']
     });
 

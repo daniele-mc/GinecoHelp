@@ -8,7 +8,7 @@
         <img src="../../../assets/icon/diu.png">
       </div>
 
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="questions.teenagerIUD">
         <ion-list-header>
           <ion-label><b>Adolescente pode usar DIU?</b></ion-label>
         </ion-list-header>
@@ -24,7 +24,7 @@
         </ion-item>
       </ion-radio-group>
 
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="questions.infectionIUD">
         <ion-list-header>
           <ion-label><b>DIU provoca alguma infecção?</b></ion-label>
         </ion-list-header>
@@ -40,7 +40,7 @@
         </ion-item>
       </ion-radio-group>
 
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="questions.changeContraceptive">
         <ion-list-header>
           <ion-label><b>Perigoso engravidar na troca de anticoncepcional?</b></ion-label>
         </ion-list-header>
@@ -59,12 +59,12 @@
     </ion-list>
 
     <div class="rodape ion-text-center">
-      <ion-button color="primary" href="/metodo-contraceptivo" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button color="primary" (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>voltar</b>
       </ion-button>
-      <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
+      <ion-button color="primary" (click)="menu()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
       </ion-button>
-      <ion-button color="primary" href="/uso-emergencia" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button color="primary" (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>próximo</b>
       </ion-button>
     </div>

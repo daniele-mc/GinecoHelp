@@ -1,11 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  CalendarModal,
-  CalendarModalOptions,
-  DayConfig,
-  CalendarResult
-} from 'ion2-calendar';
-import { CalendarComponentOptions } from 'ion2-calendar';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { Platform, LoadingController, ToastController, ModalController } from "@ionic/angular";
 import { Router } from "@angular/router";
 import { HealthService } from "src/app/services/health.service";
@@ -13,7 +7,6 @@ import { Health } from "src/app/interface/health";
 import { Subscription } from "rxjs";
 import { AuthService } from "src/app/services/auth.service";
 import { ActivatedRoute } from "@angular/router";
-import { DatePipe } from '@angular/common';
 import { resolve } from 'url';
 import { moment } from 'ngx-bootstrap/chronos/test/chain';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
@@ -40,7 +33,18 @@ export class CicloMenstrualDoisPage implements OnInit {
   private endM: number;
   private endY: number;
 
-  viewTitle: string
+  eventSource = [];
+  
+  selectedDate = new Date();
+  
+  calendar = { 
+    mode: 'month', 
+    currentDate: ''
+  }
+
+  viewTitle;
+
+  //@ViewChild(CalendarComponent) myCal: CalendarComponent;
   
   constructor(
     private healthService: HealthService,
@@ -53,15 +57,6 @@ export class CicloMenstrualDoisPage implements OnInit {
     private db: AngularFirestore,
 
   ) {  }
-
-  eventSource;
-
-  calendar = { 
-    mode: 'month', 
-    currentDate: ''
-  }
-  selectedDate = new Date();
-
  
   async load(){
     this.eventSource = this.createEvents();
@@ -91,6 +86,10 @@ export class CicloMenstrualDoisPage implements OnInit {
 
     setTimeout(this.load, 1000);    
     
+  }
+
+  onViewTitleChanged(title) {
+    this.viewTitle = title;
   }
 
   async formattingDay() {

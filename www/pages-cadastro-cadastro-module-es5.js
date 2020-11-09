@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-content>\n  <div class=\"backgroud\">\n    \n    <ion-button (click)=\"back()\" color=\"dark\" class=\"button\">\n      <img src=\"../../../assets/icon/back2.svg\">\n    </ion-button>\n    \n    <ion-icon name=\"arrow-back-outline\"></ion-icon>\n\n    \n    <ion-slides>\n      <ion-slide>\n        <div class=\"slide-inner ion-padding\">\n          <span>Cadastro</span>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"text\" placeholder=\"nome\" [(ngModel)]=\"user.name\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"date\" placeholder=\"\" [(ngModel)]=\"user.birthDate\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"email\" placeholder=\"e-mail\" [(ngModel)]=\"user.email\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"password\" placeholder=\"senha\" [(ngModel)]=\"user.password\"></ion-input>\n          </ion-item>\n\n          <ion-button fill=\"outline\" class=\"ion-margin-top\" (click)=\"register()\" color=\"primary\" expand=\"block\">\n            Criar conta\n          </ion-button><br>\n          <a><span>Termos de uso, politicas de privacidade</span></a>\n        </div>\n\n      </ion-slide>\n    </ion-slides>\n\n  </div>\n</ion-content>"
+module.exports = "<ion-content>\n  <div class=\"backgroud\">\n    \n    <ion-button (click)=\"back()\" color=\"dark\" class=\"button\">\n      <img src=\"../../../assets/icon/back2.svg\">\n    </ion-button>\n    \n    <ion-icon name=\"arrow-back-outline\"></ion-icon>\n\n    \n    <ion-slides>\n      <ion-slide>\n        <div class=\"slide-inner ion-padding\">\n          <span>Cadastro</span>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"text\" placeholder=\"nome\" [(ngModel)]=\"user.name\"></ion-input>\n          </ion-item>\n         \n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"date\" placeholder=\"data de nascimento\" [(ngModel)]=\"user.birthDate\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"email\" placeholder=\"e-mail\" [(ngModel)]=\"user.email\"></ion-input>\n          </ion-item>\n\n          <ion-item class=\"ion-margin-top\" lines=\"none\">\n            <ion-input type=\"password\" placeholder=\"senha\" [(ngModel)]=\"user.password\"></ion-input>\n          </ion-item>\n\n          <ion-button fill=\"outline\" class=\"ion-margin-top\" (click)=\"register()\" color=\"primary\" expand=\"block\">\n            Criar conta\n          </ion-button><br>\n          <a><span>Termos de uso, politicas de privacidade</span></a>\n        </div>\n\n      </ion-slide>\n    </ion-slides>\n\n  </div>\n</ion-content>"
 
 /***/ }),
 
@@ -149,17 +149,25 @@ var CadastroPage = /** @class */ (function () {
                         _a.sent();
                         _a.label = 2;
                     case 2:
-                        _a.trys.push([2, 5, 6, 7]);
-                        return [4 /*yield*/, this.authService.register(this.user)];
+                        _a.trys.push([2, 8, 9, 10]);
+                        if (!(this.user.name == null)) return [3 /*break*/, 3];
+                        console.log("nome: ", this.user.name);
+                        return [3 /*break*/, 7];
                     case 3:
+                        if (!(this.user.birthDate == null)) return [3 /*break*/, 4];
+                        console.log("aniversario:", this.user.birthDate);
+                        return [3 /*break*/, 7];
+                    case 4: return [4 /*yield*/, this.authService.register(this.user)];
+                    case 5:
                         newUser = _a.sent();
                         newUserObject = Object.assign({}, this.user);
                         delete newUserObject.password;
                         return [4 /*yield*/, this.afs.collection('Users').doc(newUser.user.uid).set(newUserObject)];
-                    case 4:
+                    case 6:
                         _a.sent();
-                        return [3 /*break*/, 7];
-                    case 5:
+                        _a.label = 7;
+                    case 7: return [3 /*break*/, 10];
+                    case 8:
                         error_1 = _a.sent();
                         console.error(error_1);
                         message = void 0;
@@ -175,11 +183,11 @@ var CadastroPage = /** @class */ (function () {
                                 break;
                         }
                         this.presentToast(message);
-                        return [3 /*break*/, 7];
-                    case 6:
+                        return [3 /*break*/, 10];
+                    case 9:
                         this.loading.dismiss();
                         return [7 /*endfinally*/];
-                    case 7: return [2 /*return*/];
+                    case 10: return [2 /*return*/];
                 }
             });
         });

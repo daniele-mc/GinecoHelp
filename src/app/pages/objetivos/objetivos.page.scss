@@ -7,7 +7,7 @@
     z-index: 2;
     &.top{
     
-        top:16%;
+        top: 16%;
         border-radius: 10px;
         background-color: #ff93ab;
         ion-segment{
@@ -38,6 +38,21 @@
     margin-top: 20px;
     color: rgb(5, 5, 5);
 }
+/*
+section {
+    height: 80%;
+       
+    .my-nav{
+        width: 75%;
+        color: rgb(5, 5, 5);
+        background-color:#ff93ab;
+        border-radius: 10px;
+    }
+   
+    ion-item{
+        --border-radius: 10px;
+    }
+}*/
 
 .rodape{
 
@@ -55,9 +70,10 @@
     background-color: #ff6c92;
     
     ul{
+     //text-align: justify;
      text-align: left;
-    }
+    }/*
     .my-nav {
         list-style-type: disc;
-    }
+    }*/
 }

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.gynecare" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>GyneCare</name>
+    <name>GynecoCare</name>
     <description>Aplicativo para saúde ginecológica e sexual da mulher</description>
     <author email="danielemcarvalho2@gmail.com">Daniele Carvalho e Janice Queiroz</author>
     <content src="index.html" />

@@ -20,31 +20,31 @@
 }
 
 .imagemBoneca {
-    margin-top: 20%;
+    margin-top: 100px;
     margin-left: 6%;
+    overflow: hidden;
 }
 
 .bia {
-    //position: relative;
-    //margin-top: 2%;
-    //top: 5%;
     font-size: 25px;
     font-family: 'Amatic SC', cursive;
     color: #6d4c80; 
-    margin-left: 10%;
+    margin-left: 7%;
     margin-bottom: 19%;
 }
 
 .boneca{
-    //position: absolute;
-    //top: 5%;
-    //margin-left: 6%;
-    width: 120px;
-    height: 150px;
+    //width: 120px;
+    //height: 150px;
+    max-width: 120px;
+    max-width: 150px;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    display: flex;
 }
 
 .title {
-    //position: relative;
     top: 15%;
     font-size: 39px;
     font-family: 'Amatic SC', cursive;
@@ -52,7 +52,7 @@
 }
 
 .subtitle {
-    //position: relative;
+
     top: 15%;
     font-size: 38px;
     font-family: 'Amatic SC', cursive;
@@ -60,8 +60,6 @@
 }
 
 .container{
-    //margin-top: 30%;
-    //position: absolute;
     width: 100%;
 }
 
@@ -71,7 +69,6 @@ ion-button .container{
 }
 
 .rodape{
-    //position: absolute;
     width: 100vw;
     top: 84.5%;
     display: flex;

@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-content>\n  <div class=\"backgroud ion-text-center\">\n    <div class=\"title ion-text-center\">Ciclo menstrual</div>\n    <div class=\"ion-margin\">\n      <ion-title>Setembro</ion-title>\n      <calendar\n      [monthviewDisplayEventTemplate]=\"template\"\n      [eventSource]=\"eventSource\" \n      [currentDate]=\"calendar.currentDate\" \n      step=\"30\"\n      >\n      </calendar>\n\n    </div>\n    <ion-button color=\"primary\" (click)=\"load()\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\">\n      <b>ver</b></ion-button>\n    <ion-button color=\"primary\" (click)=\"back()\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\">\n      <b>voltar</b>\n    </ion-button>\n    <ion-button color=\"primary\" (click)=\"menu()\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\">\n      <b>menu</b>\n    </ion-button>\n    <ion-button color=\"primary\" (click)=\"next()\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\">\n      <b>próximo</b>\n    </ion-button>\n\n  </div>\n</ion-content>"
+module.exports = "<ion-content>\n  <div class=\"backgroud ion-text-center\">\n    <div class=\"title ion-text-center\">Ciclo menstrual</div>\n    <div class=\"ion-margin\">\n\n      <ion-row>\n        <!-- Change the displayed calendar mode -->\n        <ion-col >\n          <ion-button class=\"tilteMonth ion-button-center\" expand=\"full\" fill=\"outline\" [color]=\"calendar.mode == 'month' ? 'primary' : 'secondary'\" (click)=\"changeMode('month')\">{{ viewTitle }}</ion-button>\n        </ion-col>\n      </ion-row>\n\n      <calendar\n      [monthviewDisplayEventTemplate]=\"template\"\n      [eventSource]=\"eventSource\"\n      [calendarMode]=\"calendar.mode\"\n      [currentDate]=\"calendar.currentDate\"\n      (onTitleChanged)=\"onViewTitleChanged($event)\"\n      step=\"30\"\n      >\n      </calendar>\n\n    </div>\n    <ion-button color=\"primary\" (click)=\"load()\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\">\n      <b>ver</b></ion-button>\n    <ion-button color=\"primary\" (click)=\"back()\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\">\n      <b>voltar</b>\n    </ion-button>\n    <ion-button color=\"primary\" (click)=\"menu()\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\">\n      <b>menu</b>\n    </ion-button>\n    <ion-button color=\"primary\" (click)=\"next()\" style=\"font-family: Verdana, Geneva, Tahoma, sans-serif\">\n      <b>próximo</b>\n    </ion-button>\n\n  </div>\n</ion-content>"
 
 /***/ }),
 
@@ -137,6 +137,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let CicloMenstrualDoisPage = class CicloMenstrualDoisPage {
+    //@ViewChild(CalendarComponent) myCal: CalendarComponent;
     constructor(healthService, loadingCtrl, toastCtrl, authService, activeRoute, router, modalCtrl, db) {
         this.healthService = healthService;
         this.loadingCtrl = loadingCtrl;
@@ -148,11 +149,12 @@ let CicloMenstrualDoisPage = class CicloMenstrualDoisPage {
         this.db = db;
         this.health = {};
         this.healthID = null;
+        this.eventSource = [];
+        this.selectedDate = new Date();
         this.calendar = {
             mode: 'month',
             currentDate: ''
         };
-        this.selectedDate = new Date();
     }
     load() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
@@ -179,6 +181,9 @@ let CicloMenstrualDoisPage = class CicloMenstrualDoisPage {
             yield this.loadHealth();
             setTimeout(this.load, 1000);
         });
+    }
+    onViewTitleChanged(title) {
+        this.viewTitle = title;
     }
     formattingDay() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {

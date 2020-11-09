@@ -8,7 +8,7 @@
         <img src="../../../assets/icon/dia-seguinte.png">
       </div>
 
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="questions.useContraceptiveEmergency">
         <ion-list-header>
           <ion-label><b>Pílula do dia seguinte, já tomou alguma vez?</b></ion-label>
         </ion-list-header>
@@ -24,7 +24,7 @@
         </ion-item>
 
       </ion-radio-group>
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="questions.morningAfterPillIsContraceptiv"> 
         <ion-list-header>
           <ion-label><b>Pílula do dia seguinte é um método anticoncepcional?</b></ion-label>
         </ion-list-header>
@@ -40,7 +40,7 @@
         </ion-item>
 
       </ion-radio-group>
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="questions.canRegularlyUseMorningAfterPill">
         <ion-list-header>
           <ion-label><b>Posso usar regurlamente como método contraceptivo?</b></ion-label>
         </ion-list-header>
@@ -68,12 +68,13 @@
 
     </ion-list>
     <div class="rodape ion-text-center">
-      <ion-button color="primary" href="/uso-adolecentes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
-        <b>back</b>
+      <ion-button color="primary" (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>voltar</b>
       </ion-button>
-      <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
+      <ion-button color="primary" (click)="menu()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
       </ion-button>
-      <ion-button color="primary" href="/sexo" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>next</b>
+      <ion-button color="primary" (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        <b>próximo</b>
       </ion-button>
     </div>
   </div>

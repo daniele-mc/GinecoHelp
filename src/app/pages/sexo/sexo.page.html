@@ -3,7 +3,7 @@
     <div class="title ion-text-center">Sexo</div>
     <ion-list>
 
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="questions.idealAgeSex">
         <ion-list-header>
           <ion-label>
             <img src="../../../assets/icon/sexo.png">
@@ -21,7 +21,7 @@
         </ion-item>
       </ion-radio-group>
 
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="questions.idealAgeSexSet">
         <ion-list-header>
           <ion-label> <img src="../../../assets/icon/mulher.png"><b>Se sim, qual:</b></ion-label>
         </ion-list-header>
@@ -47,7 +47,7 @@
         </ion-item>
       </ion-radio-group>
 
-      <ion-radio-group>
+      <ion-radio-group allow-empty-selection="true" [(ngModel)]="questions.useCondomVaginalAnal">
         <ion-list-header>
           <ion-label><img src="../../../assets/icon/pergunta.png">
             <b>Pode usar o mesmo preservativo no sexo vaginal e anal?</b></ion-label>
@@ -71,12 +71,12 @@
 
     </ion-list>
     <div class="rodape ion-text-center">
-      <ion-button color="primary" href="/uso-emergencia" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button color="primary" (click)="back()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>voltar</b>
       </ion-button>
-      <ion-button color="primary" href="/opcoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
+      <ion-button color="primary" (click)="menu()" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><b>menu</b>
       </ion-button>
-      <ion-button color="primary" href="/saude-relacoes" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+      <ion-button color="primary" (click)="next()" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
         <b>próximo</b>
       </ion-button>
     </div>

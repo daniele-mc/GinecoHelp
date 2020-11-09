@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-servicos-saude',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicosSaudePage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  back() {
+    return this.router.navigate(["/gravidez"]);
+  }
+
+  menu() {
+    return this.router.navigate(["/opcoes"]);
   }
 
 }

@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  AngularFirestore,
-  AngularFirestoreCollection,
-} from "@angular/fire/firestore";
+import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/firestore";
 import { Questions } from "../interface/questions";
 import { User } from "src/app/interface/user";
 import { map, takeLast } from "rxjs/operators";
@@ -41,11 +38,11 @@ export class QuestionsService {
       return existsDoc;
     }
   
-    addHealth(questions: Questions, title: string) {
+    addQuestions(questions: Questions, title: string) {
       return this.questionsCollection.doc(title).set(questions);
     }
   
-    getHealths() {
+    getQuestions() {
       return this.questionsCollection.snapshotChanges().pipe(
         map((actions) => {
           return actions.map((a) => {
@@ -58,7 +55,7 @@ export class QuestionsService {
       );
     }
   
-    getHealth(quest: string) {
+    getQuestion(quest: string) {
       return this.questionsCollection.doc<Questions>(quest).valueChanges();
     }  
 }

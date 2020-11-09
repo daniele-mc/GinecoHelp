@@ -2,11 +2,20 @@
   <div class="backgroud ion-text-center">
     <div class="title ion-text-center">Ciclo menstrual</div>
     <div class="ion-margin">
-      <ion-title>Setembro</ion-title>
+
+      <ion-row>
+        <!-- Change the displayed calendar mode -->
+        <ion-col >
+          <ion-button class="tilteMonth ion-button-center" expand="full" fill="outline" [color]="calendar.mode == 'month' ? 'primary' : 'secondary'" (click)="changeMode('month')">{{ viewTitle }}</ion-button>
+        </ion-col>
+      </ion-row>
+
       <calendar
       [monthviewDisplayEventTemplate]="template"
-      [eventSource]="eventSource" 
-      [currentDate]="calendar.currentDate" 
+      [eventSource]="eventSource"
+      [calendarMode]="calendar.mode"
+      [currentDate]="calendar.currentDate"
+      (onTitleChanged)="onViewTitleChanged($event)"
       step="30"
       >
       </calendar>

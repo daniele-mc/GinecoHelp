@@ -5,7 +5,7 @@ export interface Questions {
     changeContraceptive?: string;
     useContraceptiveEmergency?: string;
     morningAfterPillIsContraceptiv?: string;
-    canRegularlyUsemorningAfterPill?: string;
+    canRegularlyUseMorningAfterPill?: string;
     idealAgeSex?: string;
     idealAgeSexSet?: string;
     useCondomVaginalAnal?: string;

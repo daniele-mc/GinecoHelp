@@ -28,12 +28,24 @@ export class CadastroPage implements OnInit {
   async register() {
     await this.presentLoading();
     try {
+      if (this.user.name == null){
+        console.log("nome: ",this.user.name);
+      }
+      else if (this.user.birthDate == null){
+        console.log("aniversario:",this.user.birthDate);
+      }
+      else{
+        const newUser = await this.authService.register(this.user);
+        const newUserObject = Object.assign({}, this.user);
+        delete newUserObject.password;
+        await this.afs.collection('Users').doc(newUser.user.uid).set(newUserObject);
+      }
+      /*
       const newUser = await this.authService.register(this.user);
       const newUserObject = Object.assign({}, this.user);
       delete newUserObject.password;
       await this.afs.collection('Users').doc(newUser.user.uid).set(newUserObject);
-
-
+      */
     } catch (error) {
       console.error(error);
       let message: string;

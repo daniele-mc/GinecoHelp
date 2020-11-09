@@ -39,7 +39,7 @@ export class HigienePage implements OnInit {
     this.saveHealth();
     const alert = await this.AlertController.create({
       header: 'Usa ducha vaginal/higiênica?',
-      message: 'Artigos científicos mostram que não se deve usar ducha vaginal diretamente na vagina porque muda a flora vaginal e aumenta o risco de infecções.',
+      message: 'Estudos científicos mostram que não se deve usar ducha dentro da vagina porque muda a flora vaginal e aumenta o risco de infecções.',
       buttons: ['Ok']
     });
 
@@ -52,7 +52,7 @@ export class HigienePage implements OnInit {
     this.saveHealth();
     const alert = await this.AlertController.create({
       header: 'Usa protetor diário?',
-      message: 'Estudos ginecológicos mostram que usar protetor diário constantemente aquece e altera a pele, predispondo a infecções genitais.',
+      message: 'Estudos científicos mostram que usar protetor diário constantemente aquece e altera a pele, predispondo a infecções genitais.',
       buttons: ['Ok']
     });
 

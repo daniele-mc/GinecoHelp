@@ -4,7 +4,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'objetivos', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule) },
   { path: 'objetivos', loadChildren: () => import('./pages/objetivos/objetivos.module').then(m => m.ObjetivosPageModule), canActivate: [LoginGuard] },
   { path: 'cadastro', loadChildren: () => import('./pages/cadastro/cadastro.module').then(m => m.CadastroPageModule), canActivate: [LoginGuard] },
